@@ -9,11 +9,26 @@ import complexSupport from "../../images/Complex-Sup-Woman.png";
 import marketingLine from "../../images/Marketing-Line.svg";
 import marketingLineBG from "../../images/Marketing-Half-line.svg";
 import euphoriaRefferal from "../../images/Euphoria-refferal.png";
+import quotationMark from "../../images/“.svg";
 //components
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Slider from "../Slider/Slider";
 function Main() {
   const [showArrow, setShowArrow] = useState(false);
+  const slides = [
+    {
+      name: "Complex Support",
+      img: complexSupport,
+      description: "Lorem Ipsum",
+    },
+    {
+      name: "ddd Support",
+      img: complexSupport,
+      description: "Lorem Ipsum",
+    },
+  ];
+
   return (
     <>
       <Header></Header>
@@ -146,6 +161,77 @@ function Main() {
             <div className="survey-card">
               <img src="" alt="" />
             </div>
+            <div className="survey-card">
+              <img src="" alt="" />
+            </div>
+            <div className="survey-card">
+              <img src="" alt="" />
+            </div>
+            <div className="survey-card">
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* в quote section не получилось добавить бекгруанд с фигурками и стеклянный фон поставился странно */}
+      <div className="quote-section">
+        <div className="quote-wrapper container">
+          <div className="dark-quote">
+            <div className="dark-quote-wrapper">
+              <img src={quotationMark} alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <Slider slides={slides} dark={false}></Slider>
+            </div>
+          </div>
+          <div className="light-quote">
+            <div className="light-quote-wrapper">
+              <img src={quotationMark} alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              {/* <div className="quote-slider">
+                <div className="left-arrow">
+                  <img src="" alt="" />
+                </div>
+                <div className="quote-person">
+                  <img src="" alt="" />
+                  <h5>Доктор jivan lika</h5>
+                  <h6>Кандидат наук в отрасли бадов</h6>
+                </div>
+                <div className="right-arrow">
+                  <img src="" alt="" />
+                </div>
+              </div> */}
+
+              <Slider slides={slides} dark={true}></Slider>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="application-form">
+        <div className="application-form-wrapper container">
+          <div className="application-form-info">
+            <h3>Текст текст</h3>
+            <p>
+              Ut enim ad minima veniam, quis nostrum exercitationem ullam
+              corporis suscipit laboriosam, nisi ut al Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt{" "}
+            </p>
+          </div>
+          <div className="application-form-send">
+            <input type="text" placeholder="Имя" />
+            <input type="text" placeholder="Номер телефона" />
+            <button>Оставить заявку</button>
           </div>
         </div>
       </div>
