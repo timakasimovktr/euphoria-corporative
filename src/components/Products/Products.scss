@@ -1,0 +1,141 @@
+.products-main {
+  height: 100%;
+  background-repeat: repeat;
+  background-size: contain;
+  background-image: url("../../images/Main-Bg.svg");
+  background-position: top;
+}
+.category-wrapper {
+  width: 100%;
+  h2 {
+    font-size: 40px;
+    font-family: Gilroy-Regular;
+  }
+  .product-grid {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    gap: 35px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+    .product-card {
+      padding: 17px;
+      background-color: #1f1f1f;
+      border-radius: 15px;
+      h4 {
+        font-family: Gilroy-Medium;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .products-button {
+        width: 100%;
+      }
+      p {
+        font-family: Gilroy-Regular;
+        font-size: 16px;
+        color: #a2a2a2;
+        text-align: center;
+        margin-top: 12px;
+      }
+
+      .product-image {
+        background-color: #131313;
+        height: 228px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+.products-button {
+  width: max-content;
+  background-color: #d8c831;
+  color: #000000;
+  font-family: gilroy-Medium;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 17px 70px;
+  position: relative;
+  border-radius: 30px;
+  margin-top: 12px;
+  border: none;
+  border-bottom: 2.3px solid #9b7b02;
+  overflow: visible;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 30px;
+    height: 2px;
+  }
+
+  &::after {
+    bottom: -5px;
+    border-bottom: 3px solid #b79d09;
+    //   height: calc(100% + 7px);
+    width: calc(100% - 2px);
+    left: 1px;
+    height: 100%;
+  }
+}
+
+.modal-wrapper {
+  padding: 54px 32px;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 350px;
+  }
+  .modal-product-desc {
+    width: 50%;
+    h3 {
+      font-family: gilroy-regular;
+      font-size: 48px;
+      color: #fab400;
+      margin-bottom: 50px;
+    }
+    .modal-product-desc-text {
+      p {
+        font-size: 24px;
+        margin-bottom: 35px;
+        span {
+          font-size: 32px;
+        }
+      }
+    }
+
+    .products-button {
+      float: right;
+    }
+    .modal-product-form {
+      height: max-content;
+      p {
+        font-family: gilroy-thin;
+        font-size: 16px;
+        color: #626262;
+      }
+      input {
+        padding: 17px;
+        border-radius: 10px;
+        border: none;
+        color: #545454;
+        font-family: montserrat;
+        font-weight: 500;
+        &::placeholder {
+          color: #545454;
+          opacity: 100%;
+        }
+      }
+      .products-button{
+        float: none;
+      }
+    }
+  }
+}

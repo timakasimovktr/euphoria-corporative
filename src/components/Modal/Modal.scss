@@ -1,0 +1,29 @@
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-image: url('../../images/Main-Bg.svg') ;
+    background-color: #202020;
+    border-radius: 5px;
+    width: 65%;
+    h2{
+        font-family: Montserrat;
+        margin-bottom: 63px;
+    }
+}
+
+.modal-active {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
