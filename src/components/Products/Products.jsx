@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import Modal from "../Modal/Modal";
 import "./Products.scss";
 import xClose from '../../images/x-close.svg'
+import NavBar from "../NavBar/NavBar";
 const Products = () => {
   const [modalInfo, setModalInfo] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
@@ -61,6 +62,9 @@ const Products = () => {
     <>
       <Header />
       <main className="products-main">
+        <NavBar categories={cate}>
+
+        </NavBar>
         <div className="category-wrapper container">
           {Object.entries(productsByCategory).map(([category, products]) => (
             <div key={category} className="distinct-category-wrapper">
