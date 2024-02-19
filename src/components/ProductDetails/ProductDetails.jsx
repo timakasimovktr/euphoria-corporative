@@ -8,7 +8,6 @@ import { APP_ROUTES } from "../../router/Route";
 import IncrementDecrementBtn from "../IncrementDecrementBtn/IncrementDecrementBtn";
 import Footer from "../Footer/Footer";
 const ProductDetails = () => {
-  
   const products = [
     {
       id: 1,
@@ -23,7 +22,7 @@ const ProductDetails = () => {
     },
     {
       id: 2,
-      category: "Category 2",
+      category: " 2",
       name: "Product 2",
       description: "Description 2",
       price: 100000,
