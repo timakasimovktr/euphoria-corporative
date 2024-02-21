@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Modal from "../Modal/Modal";
-import xClose from "../../images/x-close.svg";
 import NavBar from "../NavBar/NavBar";
 import arrowRightIcon from "../../images/Light-Slider-Arrow.svg";
 import "./Products.scss";
@@ -110,60 +109,6 @@ const Products = () => {
           ))}
         </div>
 
-        <Modal visible={modalVisible} setVisible={setModalVisible}>
-          <img src={xClose} alt="" className="cross-logo" />
-          {modalInfo && (
-            <div className="modal-wrapper">
-              <img src={modalInfo.img} alt="" />
-              <div className="modal-product-desc">
-                <h3>{modalInfo.name}</h3>
-                <div className="modal-product-desc-text">
-                  <p>
-                    <span className="product-desc-title">СОСТАВ: </span>{" "}
-                    {modalInfo.composition}
-                  </p>
-                  <p>
-                    <span className="product-desc-title">
-                      ДЕЙСТВИЕ ПРЕПАРАТА:
-                    </span>
-                    {modalInfo.effect}
-                  </p>
-                  <p>
-                    <span className="product-desc-title">ПОКАЗАНИЯ: </span>
-                    {modalInfo.indications}
-                  </p>
-                  <p>
-                    <span className="product-desc-title">
-                      ПРОТИВОПОКАЗАНИЯ:{" "}
-                    </span>
-                    {modalInfo.contraindications}
-                  </p>
-
-                  <button
-                    className="products-button"
-                    // onClick={() => handleOrderClick(item)}
-                  >
-                    оформить заказ
-                  </button>
-                </div>
-                <div className="modal-product-form">
-                  <form action="">
-                    <p>Введите имя и фамилию</p>
-                    <input type="text" />
-                    <hr />
-                    <p>Введите номер телефона</p>
-                    <input
-                      type="tel"
-                      placeholder="+998 (__) ___ __ __"
-                      pattern="\+998\s\([0-9]{2}\)\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}"
-                    />
-                    <button className="products-button">Заказать</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          )}
-        </Modal>
       </main>
       <Footer />
     </>

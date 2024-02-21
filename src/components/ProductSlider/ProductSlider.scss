@@ -1,0 +1,17 @@
+.product-slider {
+  display: flex;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  .product-photo {
+    min-width: 65%;
+    min-height: 100%;
+    justify-self: center;
+    display: flex;
+    img{
+        margin: 0 auto;
+    }
+  }
+}

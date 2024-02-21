@@ -1,12 +1,18 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import Slider from "../Slider/Slider";
+import { APP_ROUTES } from "../../router/Route";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "./ProductDetails.scss";
+// components
 import Header from "../Header/Header";
 import ShopHeader from "../ShopHeader/ShopHeader";
-import "./ProductDetails.scss";
-import { APP_ROUTES } from "../../router/Route";
 import IncrementDecrementBtn from "../IncrementDecrementBtn/IncrementDecrementBtn";
 import Footer from "../Footer/Footer";
+import Modal from "../Modal/Modal";
+import ProductSlider from "../ProductSlider/ProductSlider";
+// images
+import productPhoto from "../../images/product-photo.png";
+import checkCircle from "../../images/Check-Circle.svg";
 const ProductDetails = () => {
   const products = [
     {
@@ -14,7 +20,7 @@ const ProductDetails = () => {
       category: "Category 1",
       name: "Multi Health",
       description: "Чай для похудения",
-      img: "",
+      img: "../../images/product-photo.png",
       composition: "изготавливаются...",
       effect: "предотвращает...",
       indications: "изготавливаются...",
@@ -34,25 +40,70 @@ const ProductDetails = () => {
     },
     // Add more products with different categories as needed
   ];
-  
   const navigation = useNavigate();
-
-  let { productId } = useParams();
   const slides = [
     {
-      url: "",
+      img: productPhoto,
+    },
+    {
+      img: "../../images/AboutUsPic.png",
     },
   ];
-  // Fetch product details based on productId
+  const [modal, setModal] = useState(false);
+  const [currentForm, setCurrentForm] = useState(null);
   return (
     <>
       <Header></Header>
       <ShopHeader></ShopHeader>
+      <Modal visible={modal} setVisible={setModal}>
+        {currentForm == 1 && (
+          <>
+            <div className="modal-content-wrapper">
+              <h2>Оформить заказ</h2>
+              <form action="">
+                <div className="inputs-wrapper">
+                  <input type="text" placeholder="Имя" name="name" id="" />
+                  <input
+                    type="text"
+                    placeholder="Фамилия"
+                    name="surname"
+                    id=""
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Номер телефона"
+                    name="phone-num"
+                    id=""
+                  />
+                  <select name="city" id="">
+                    <option disabled value="">
+                      Город
+                    </option>
+                    <option value="Tashkent">Ташкент</option>
+                    <option value="Tashkent">Самарканд</option>
+                    <option value="Tashkent">Карши</option>
+                  </select>
+                </div>
+                <button onClick={() => setCurrentForm(2)}>Отправить </button>
+              </form>
+            </div>
+          </>
+        )}
+
+        {currentForm == 2 && (
+          <>
+            <div className="modal-content-wrapper">
+              <img src={checkCircle} alt="" />
+              <h3>Заявка принята</h3>
+            </div>
+          </>
+        )}
+      </Modal>
       <div className="product-details">
         <div className="product-details-wrapper container">
           <div className="product-card">
             <div className="product-info-img">
-              <Slider slides={slides}></Slider>
+              <ProductSlider slides={slides}></ProductSlider>
             </div>
             <div className="short-product-info">
               <div>
@@ -68,7 +119,14 @@ const ProductDetails = () => {
 
               <div>
                 <div className="product-buttons">
-                  <button type="submit" className="add-to-cart-btn">
+                  <button
+                    onClick={() => {
+                      setModal(true);
+                      setCurrentForm(1);
+                    }}
+                    type="submit"
+                    className="add-to-cart-btn"
+                  >
                     ЗАКАЗАТЬ
                   </button>
                   <div className="incr-decr">
@@ -145,7 +203,6 @@ const ProductDetails = () => {
               ))}
             </div>
           </div>
-
         </div>
       </div>
       <Footer></Footer>
