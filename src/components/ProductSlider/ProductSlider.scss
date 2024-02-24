@@ -15,3 +15,20 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  
+  .product-slider{
+    margin: 19px auto;
+    width: fit-content;
+
+    .product-photo{
+      img{
+        width: 80%;
+      }
+    }
+    .left-arrow img, .right-arrow img{
+      width: 50px;
+    }
+  }
+}
