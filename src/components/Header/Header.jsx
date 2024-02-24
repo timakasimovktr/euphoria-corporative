@@ -22,7 +22,8 @@ const Header = () => {
                 <a onClick={() => navigation(APP_ROUTES.PRODUCTS)}>Продукция</a>
               </li>
               <li>
-                <a href="">Филиалы</a>
+                <a onClick={() => navigation(APP_ROUTES.FILIAL)}>Филиалы</a>
+
               </li>
               <li>
                 <a href="">Партнеры</a>

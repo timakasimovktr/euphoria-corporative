@@ -21,6 +21,7 @@ const Slider = ({ slides, dark }) => {
     <>
       <div className="quote-slider">
         {dark ? (
+          
           <button onClick={goToPrevSlide} className="left-arrow">
             <img
               src={darkSliderArrow}

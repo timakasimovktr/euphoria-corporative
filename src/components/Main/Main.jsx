@@ -14,8 +14,10 @@ import quotationMark from "../../images/“.svg";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Slider from "../Slider/Slider";
+import Modal from "../Modal/Modal";
 function Main() {
-  const [showArrow, setShowArrow] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [currentForm, setCurrentForm] = useState(null);
   const slides = [
     {
       name: "Complex Support",
@@ -32,6 +34,67 @@ function Main() {
   return (
     <>
       <Header></Header>
+      <Modal visible={modal} setVisible={setModal}>
+        {currentForm == 1 && (
+          <>
+            <div className="modal-content-wrapper">
+              <h2>Пройдите опрос</h2>
+              <form action="">
+                <div className="inputs-wrapper">
+                  <input type="text" placeholder="Возраст" name="age" id="" />
+                  <div className="radio-btn-wrapper">
+                    <label>Пол</label>
+                    <div>
+                      <div className="radio-btn">
+                        <input type="radio" name="sex" value="woman" id="" />
+                        <label htmlFor="woman">Жен</label>
+                      </div>
+                      <div className="radio-btn">
+                        <input type="radio" name="sex" value="man" id="" />
+                        <label htmlFor="man">Муж</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <select name="illness-category" id="">
+                    <option disabled value="">
+                      Категория болезни
+                    </option>
+                    <option value="Tashkent">Ташкент</option>
+                    <option value="Tashkent">Самарканд</option>
+                    <option value="Tashkent">Карши</option>
+                  </select>
+                </div>
+                <button onClick={() => setCurrentForm(2)}>Дальше </button>
+              </form>
+            </div>
+          </>
+        )}
+        {currentForm == 2 && (
+          <>
+            <div className="modal-content-wrapper">
+              <h2>Пройдите опрос</h2>
+              <form action="">
+                <div className="inputs-wrapper">
+                  <h2>
+                    Гипертония <span>1/10</span>
+                  </h2>
+
+                  <select name="illness-category" id="">
+                    <option disabled value="">
+                      Как часто вы измеряете артериальное давление?
+                    </option>
+                    <option value="Tashkent">1 раз в день</option>
+                    <option value="Tashkent">2 раза в день</option>
+                    <option value="Tashkent">Больше</option>
+                  </select>
+                </div>
+                <button onClick={() => setCurrentForm(2)}>Дальше </button>
+              </form>
+            </div>
+          </>
+        )}
+      </Modal>
       <main>
         <div className="main-wrapper container">
           <div style={{ width: "55%" }} className="first-main-wrapper">
@@ -155,7 +218,14 @@ function Main() {
               amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore Ut Ut enim
             </p>
-            <button>Пройти опрос</button>
+            <button
+              onClick={() => {
+                setModal(true);
+                setCurrentForm(1);
+              }}
+            >
+              Пройти опрос
+            </button>
           </div>
           <div className="survey-cards">
             <div className="survey-card">
@@ -191,25 +261,6 @@ function Main() {
           <div className="light-quote">
             <div className="light-quote-wrapper">
               <img src={quotationMark} alt="" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              {/* <div className="quote-slider">
-                <div className="left-arrow">
-                  <img src="" alt="" />
-                </div>
-                <div className="quote-person">
-                  <img src="" alt="" />
-                  <h5>Доктор jivan lika</h5>
-                  <h6>Кандидат наук в отрасли бадов</h6>
-                </div>
-                <div className="right-arrow">
-                  <img src="" alt="" />
-                </div>
-              </div> */}
 
               <Slider slides={slides} dark={true}></Slider>
             </div>
@@ -229,9 +280,11 @@ function Main() {
             </p>
           </div>
           <div className="application-form-send">
-            <input type="text" placeholder="Имя" />
-            <input type="text" placeholder="Номер телефона" />
-            <button>Оставить заявку</button>
+            <form action="">
+              <input type="text" placeholder="Имя" />
+              <input type="text" placeholder="Номер телефона" />
+              <button>Оставить заявку</button>
+            </form>
           </div>
         </div>
       </div>

@@ -1,0 +1,25 @@
+.nav-bar {
+  height: 50vh;
+  width: fit-content;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border-radius: 10px;
+  ul {
+    list-style-type: none;
+  }
+  .nav-bar-title {
+    display: flex;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #d9d9d9;
+    img {
+      width: 24px;
+    }
+  }
+  .nav-bar-category{
+    display: flex;
+  }
+  li {
+    padding: 11px 20px;
+   
+  }
+}
