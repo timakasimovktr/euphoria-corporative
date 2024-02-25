@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
 
 body {
@@ -46,4 +46,24 @@ a{
   max-width: 1570px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media(max-width: 768px){
+  .container {
+    max-width: 748px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  h1{
+    font-size: 30px;
+    font-family: Gilroy-Bold;
+    font-weight: 700;
+  }
+  p{
+    font-size: 15px;
+    font-family: gilroy-regular;
+    font-weight: 400;
+  }
+  
 }

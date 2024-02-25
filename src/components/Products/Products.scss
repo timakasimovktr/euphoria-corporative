@@ -179,3 +179,113 @@
     }
   }
 }
+
+
+@media (max-width: 768px) {
+  .products-main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .category-wrapper {
+    width: 100%;
+    h2 {
+      font-size: 40px;
+      font-family: Gilroy-Regular;
+    }
+    .category-title{
+      display: flex;
+      justify-content: space-between;
+      hr{
+        width: 25%;
+        height: 1px;
+        align-self: center;
+        color: rgba(255, 245, 0, 1);
+      }
+      button{
+        background-color: transparent;
+        border: none;
+        text-decoration: underline;
+        color: white;
+        font-size: 24px;
+      }
+    }
+    .product-grid {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      gap: 40px;
+      margin-top: 40px;
+      margin-bottom: 50px;
+  
+      .product-card {
+        padding: 17px;
+        background-color: #1f1f1f;
+        border-radius: 15px;
+        min-height:450px;
+        width: 272px;
+        
+        .price-block{
+          min-width: 150px;
+          margin-top:7px ;
+          max-width: fit-content;
+          padding: 13px 10px;
+          border-radius: 0 25px 25px 0;
+          background-color: rgba(255, 245, 0, 1);
+          color: rgba(0, 0, 0, 1);
+          font-family: Gilroy-Bold;
+        }
+        h4 {
+          font-family: Gilroy-Medium;
+          font-size: 24px;
+          text-align: center;
+          margin-top: 30px;
+        }
+        .products-button {
+          width: 100%;
+        }
+        p {
+          font-family: Gilroy-Regular;
+          font-size: 16px;
+          color: #a2a2a2;
+          text-align: center;
+          margin-top: 12px;
+        }
+  
+        .product-image {
+          height: 50%;
+          width: 100%;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+  
+          .gray-element {
+            flex-grow: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 80%;
+            background-color: rgba(78, 78, 78, 1);
+            width: 100%;
+          }
+  
+          .black-element {
+            background: linear-gradient(
+              1.2deg,
+              #080808 53.89%,
+              rgba(78, 78, 78, 0) 98.98%
+            );
+            border-radius: 0px 0px 122px 122px;
+  
+            position: absolute;
+            left: 10%;
+            height: 100%;
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}

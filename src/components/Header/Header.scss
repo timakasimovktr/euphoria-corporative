@@ -5,7 +5,7 @@ header {
   align-items: center;
   border-bottom: 1px solid rgba(90, 90, 90, 1);
   color: white;
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   .header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -20,6 +20,11 @@ header {
       justify-content: space-between;
       width: 45%;
       align-items: center;
+      nav input[type="checkbox"],
+      nav .hamburger-lines {
+        display: none;
+      }
+
       ul {
         list-style: none;
         display: flex;
@@ -52,9 +57,109 @@ header {
   p {
     font-size: 20px;
   }
-  div{
+  div {
     display: flex;
     width: 100%;
     justify-content: space-between;
   }
+}
+
+@media (max-width: 768px) {
+
+
+  .change-language{
+    display: none;
+  }
+ /* Header.scss */
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  right: 0;
+}
+
+.menu__btn {
+  position: absolute;
+  top: 29px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 999;
+  right: 30px;
+  float: right;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+  transition-duration: 0.25s;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+span {
+  z-index: 999;
+}
+
+ul.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 60px;
+  flex-direction: column;
+  list-style: none;
+  background-color: #1f1f1f;
+  opacity: 0.95;
+  box-shadow: -2px 0px 10px rgba(112, 105, 105, 0.394);
+  transition-duration: 0.25s;
+  text-align: right;
+  z-index: 99;
+}
+
+ul.menu__box li {
+  padding: 12px 0;
+  margin-right: 0 !important;
+}
+
+ul.menu__box li:hover {
+  text-decoration: underline;
+}
+
 }

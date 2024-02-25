@@ -19,9 +19,11 @@ const Slider = ({ slides, dark }) => {
 
   return (
     <>
+      <p>
+        {slides[currentIndex].quote}
+      </p>
       <div className="quote-slider">
         {dark ? (
-          
           <button onClick={goToPrevSlide} className="left-arrow">
             <img
               src={darkSliderArrow}

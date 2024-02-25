@@ -47,17 +47,17 @@
         letter-spacing: 0em;
         text-align: center;
       }
-    
+
       .inputs-wrapper {
         width: 100%;
         margin-bottom: 80px;
         margin: 0 auto;
-        h2{
-        text-align: left;
-span{
-    color: #6C6C6C;
-    margin-left: 40px;
-}
+        h2 {
+          text-align: left;
+          span {
+            color: #6c6c6c;
+            margin-left: 40px;
+          }
         }
         .radio-btn-wrapper {
           padding: 34px 27px;
@@ -70,15 +70,15 @@ span{
           font-size: 24px;
           display: flex;
           justify-content: space-between;
-          
+
           margin-bottom: 25px;
           label {
             font-family: Gilroy-regular;
             font-size: 24px;
             font-weight: 500;
-            color: #6C6C6C;
+            color: #6c6c6c;
           }
-          div{
+          div {
             display: flex;
             justify-content: space-between;
           }
@@ -86,7 +86,7 @@ span{
             display: flex;
             align-items: center;
             margin-left: 30px;
-            
+
             input {
               width: fit-content;
               margin: 0;
@@ -150,4 +150,145 @@ span{
   justify-content: center;
   align-items: center;
   z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .modal-window {
+    background-color: #dcdcdc;
+    border-radius: 20px;
+    width: 90%;
+
+    .modal-content {
+      display: flex;
+      margin: 30px 50px;
+      justify-content: center;
+
+      .modal-content-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+          font-family: Gilroy-regular;
+          font-size: 30px;
+          font-weight: 400;
+          text-align: center;
+          line-height: 32px;
+          margin-bottom: 60px;
+          color: #000000;
+        }
+        img {
+          width: 20%;
+          align-self: center;
+          margin-bottom: 50px;
+        }
+        h3 {
+          font-family: Gilroy-Medium;
+          font-size: 30px;
+          font-weight: 500;
+          line-height: 48px;
+          color: #000000;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+
+        .inputs-wrapper {
+          width: 100%;
+          margin-bottom: 80px;
+          margin: 0 auto;
+          h2 {
+            font-size: 30px;
+            text-align: left;
+            span {
+              color: #6c6c6c;
+              margin-left: 30px;
+            }
+          }
+          .radio-btn-wrapper {
+            padding: 34px 27px;
+            background-color: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 10px;
+            width: 100%;
+            font-family: gilroy-medium;
+            color: #000000;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+            label {
+              font-family: Gilroy-regular;
+              font-size: 24px;
+              font-weight: 500;
+              color: #6c6c6c;
+            }
+            div {
+              display: flex;
+              justify-content: space-between;
+            }
+            .radio-btn {
+              display: flex;
+              align-items: center;
+              margin-left: 30px;
+
+              input {
+                width: fit-content;
+                margin: 0;
+                margin-right: 20px;
+              }
+            }
+          }
+
+          input {
+            padding: 20px 10px;
+            background-color: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 10px;
+            width: 100%;
+            font-family: gilroy-medium;
+            color: #000000;
+            font-size: 24px;
+            margin-bottom: 25px;
+
+            &::placeholder {
+              font-family: gilroy-medium;
+              color: #6c6c6c;
+              font-size: 24px;
+              opacity: 100%;
+            }
+          }
+        }
+        select {
+          padding: 20px 10px;
+          background-color: #ffffff;
+          border: 1px solid #d0d0d0;
+          border-radius: 10px;
+          width: 100%;
+          font-family: gilroy-medium;
+          color: #6c6c6c;
+          font-size: 24px;
+          margin-bottom: 25px;
+        }
+
+        button {
+          background-color: #fff500;
+          font-family: gilroy-regular;
+          font-size: 20px;
+          color: #000000;
+          width: 100%;
+          padding: 20px 0;
+
+          border-radius: 20px;
+        }
+      }
+    }
+
+    .close-circle {
+      position: relative;
+      float: right;
+      margin: 30px;
+    }
+  }
 }

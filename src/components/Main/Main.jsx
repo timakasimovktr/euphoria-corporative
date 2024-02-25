@@ -23,11 +23,14 @@ function Main() {
       name: "Complex Support",
       img: complexSupport,
       description: "Lorem Ipsum",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       name: "ddd Support",
       img: complexSupport,
       description: "Lorem Ipsum",
+      quote: "Lorem ipsu veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+
     },
   ];
 
@@ -108,7 +111,7 @@ function Main() {
               <div className="card"></div>
             </div>
           </div>
-          <div style={{ width: "40%", display: "flex" }}>
+          <div className="second-main-wrapper" style={{ width: "40%", display: "flex" }}>
             <img src={mainBanner} alt="" />
           </div>
         </div>
@@ -126,7 +129,7 @@ function Main() {
 
             <button>Каталог</button>
           </div>
-          <div>
+          <div className="complex-image">
             <img src={complexSupport} alt="" />
           </div>
         </div>
@@ -248,13 +251,8 @@ function Main() {
         <div className="quote-wrapper container">
           <div className="dark-quote">
             <div className="dark-quote-wrapper">
-              <img src={quotationMark} alt="" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+              <img className="quotes" src={quotationMark} alt="" />
+            
               <Slider slides={slides} dark={false}></Slider>
             </div>
           </div>
