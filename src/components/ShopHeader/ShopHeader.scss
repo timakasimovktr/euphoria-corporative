@@ -1,13 +1,18 @@
-.shopheader{
-    background-color: #FFDD31;
-    padding: 20px 0 ;
-    color: black;
-    font-family: Gilroy-Medium;
-    b, span{
-        font-size: 30px;
-    }
-    p{
-        font-size: 18px;
-
-    }
+.shopheader {
+  background-color: #ffdd31;
+  padding: 20px 0;
+  color: black;
+  font-family: Gilroy-Medium;
+  .shopheader-paragraph {
+    display: flex;
+  }
+  b {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+  span {
+    font-size: 18px;
+    align-self: center;
+    margin: auto 0 ;
+  }
 }

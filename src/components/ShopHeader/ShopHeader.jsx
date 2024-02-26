@@ -4,10 +4,10 @@ const ShopHeader = () => {
   return (
     <div className="shopheader">
       <div className="container">
-        <p>
-          <b>Shop </b>
-          <span>|</span>Find the perfect plant for your space
-        </p>
+        <div className="shopheader-paragraph">
+          <b>Shop |     </b>
+          <span>   Find the perfect plant for your space</span>
+        </div>
       </div>
     </div>
   );
