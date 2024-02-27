@@ -43,9 +43,9 @@ const Header = () => {
                 <li>
                   <a href="">О нас</a>
                 </li>
-                <li className="change-language-mobile">
+                {/* <li className="change-language-mobile">
                   <b>Поменять язык</b>
-                </li>
+                </li> */}
               </ul>
             </div>
           </nav>
