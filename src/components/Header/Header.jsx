@@ -16,7 +16,7 @@ const Header = () => {
     <header>
       <div className="header-wrapper container ">
         <div className="header-logo">
-          <img src={euphoriaLogo} alt="" />
+          <img onClick={() => navigation(APP_ROUTES.WELCOME)} src={euphoriaLogo} alt="" />
         </div>
         <div className="header-menu">
           <nav>

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import arrow from "../../images/ProductArrow.svg";
 import "./ProductSlider.scss";
+import png from '../../images/AboutUsPic.png'
 const ProductSlider = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevSlide = () => {
@@ -25,7 +26,7 @@ const ProductSlider = ({ slides }) => {
         <div className="product-photo">
           <img
             src={slides[currentIndex].img}
-            // src={productPhoto}
+            // src={png}
             alt="product-photo"
           />
         </div>
