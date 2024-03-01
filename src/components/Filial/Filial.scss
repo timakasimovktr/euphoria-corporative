@@ -6,11 +6,13 @@
     .filial-row {
       display: flex;
       justify-content: space-between;
+      width: 100%;
 
       .filial-info {
         justify-content: space-between;
         display: flex;
         flex-direction: column;
+        width: 30%;
         h1 {
           font-family: Gilroy-medium;
           font-size: 64px;
@@ -25,7 +27,18 @@
           text-align: left;
         }
       }
+    .filial-map{
+      width: 70%;
+      height: 100%;
+      margin: auto 0;
+
+      img{
+        width: 100%;
+      }
     }
+    
+    }
+
     .filial-form-section {
       margin-top: 100px;
       justify-content: end;
