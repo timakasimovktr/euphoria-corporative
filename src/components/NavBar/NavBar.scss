@@ -4,6 +4,9 @@
   background-color: #1f1f1f;
   color: #ffffff;
   border-radius: 10px;
+  position: fixed;
+  left: 130px;
+  width: 20%;
   padding: 15px;
   ul {
     list-style-type: none;
@@ -15,23 +18,21 @@
       width: 24px;
     }
   }
-  .nav-bar-category{
+  .nav-bar-category {
     display: flex;
   }
   li {
-    padding: 11px 3px 11px 0 ;
-   
+    padding: 11px 3px 11px 0;
   }
-  span{
+  span {
     padding-top: 4px;
     font-size: 11px;
   }
 }
 
-
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .nav-bar {
-    margin: 30px 0 ;
+    margin: 30px 0;
     width: 100%;
     height: fit-content;
     background-color: #1f1f1f;
@@ -48,13 +49,11 @@
         width: 24px;
       }
     }
-    .nav-bar-category{
+    .nav-bar-category {
       display: flex;
     }
     li {
       padding: 10px 5px;
-     
     }
   }
-  
 }

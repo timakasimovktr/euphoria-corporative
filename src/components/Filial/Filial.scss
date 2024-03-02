@@ -17,6 +17,7 @@
           font-family: Gilroy-medium;
           font-size: 64px;
           font-weight: 500;
+          margin-bottom: 30px;
         }
         p {
           font-family: Gilroy-regular;
@@ -27,28 +28,28 @@
           text-align: left;
         }
       }
-    .filial-map{
-      width: 70%;
-      height: 100%;
-      margin: auto 0;
+      .filial-map {
+        width: 69%;
+        height: 100%;
+        margin: auto 0;
 
-      img{
-        width: 100%;
+        img {
+          width: 100%;
+        }
       }
     }
-    
-    }
-
     .filial-form-section {
-      margin-top: 100px;
+      margin-top: 60px;
       justify-content: end;
       width: 100%;
       flex-direction: row;
+      margin-bottom: 60px;
       display: flex;
       .filial-form-wrapper {
         background-color: #d9d9d9;
         border-radius: 32px;
         display: flex;
+        margin: 0 auto;
         width: 50%;
         .filial-form-contacts {
           width: 34%;

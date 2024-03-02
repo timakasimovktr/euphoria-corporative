@@ -9,7 +9,7 @@ const Marketing = () => {
       <Header />
       <div className="marketing-main">
         <div className="marketing-wrapper container">
-          <h1>Маркентинг</h1>
+          <h1>Маркетинг</h1>
           <div className="marketing-info">
             <p>
               Добро пожаловать в мир компании "Euphoria group"! Мы -

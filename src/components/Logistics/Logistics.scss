@@ -1,26 +1,27 @@
 .logistics-main {
-    padding: 100px 0;
+    padding: 60px 0;
     .logistics-wrapper {
       h1 {
         font-family: Gilroy-medium;
-        font-size: 55px;
+        font-size: 50px;
         font-weight: 600;
         line-height: 79px;
         letter-spacing: 0em;
         text-align: left;
         color: #fff500;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
       .logistics-row {
         display: flex;
         p {
             width: 50%;
-          font-size: 32px;
+          font-size: 26px;
           font-weight: 400;
           line-height: 38px;
           letter-spacing: 0em;
           text-align: left;
           align-self: center;
+          padding: 8px;
         }
         img{
             width: 50%;
