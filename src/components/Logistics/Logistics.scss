@@ -1,5 +1,7 @@
 .logistics-main {
   padding: 60px 0;
+  margin-top: 2rem;
+
   .logistics-wrapper {
     h1 {
       font-family: Gilroy-medium;
@@ -34,6 +36,7 @@
 @media (max-width: 726px) {
   .logistics-main {
     padding: 30px 0;
+    margin-top: 2rem;
     .logistics-wrapper {
       h1 {
         font-size: 36px;
@@ -57,7 +60,6 @@
           height: 20vh;
           border-radius: 30px;
           margin-bottom: 10px;
-
         }
       }
     }
