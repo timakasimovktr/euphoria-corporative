@@ -1,13 +1,15 @@
 .nav-bar {
-  height: 50vh;
-  width: fit-content;
-  background-color: #1f1f1f;
-  color: #ffffff;
-  border-radius: 10px;
-  position: fixed;
-  left: 130px;
-  width: 20%;
-  padding: 15px;
+    height: 50vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-radius: 10px;
+    position: fixed;
+    left: 130px;
+    width: 20%;
+    padding: 15px;
+    top: 19%;
   ul {
     list-style-type: none;
   }

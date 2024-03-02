@@ -46,4 +46,50 @@
       }
     }
   }
+
+  @media (max-width: 726px) {
+    .callcenter {
+      padding: 60px 0;
+      .callcenter-wrapper {
+        h1 {
+          font-size: 36px;
+          line-height: normal;
+          margin-bottom: 10px;
+        }
+        .callcenter-info {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column-reverse;
+
+          p {
+              width: 100%;
+              font-size: 20px;
+              line-height: 30px;
+            }
+            .callcenter-imgs{
+              width: 100%;
+              img{
+                  width: 45%;
+                  border-radius: 30px;
+                  height: 50%;
+                  &:nth-child(1){
+                      position: relative;
+                      top: 10px;
+                  }
+                  &:nth-child(2){
+                      position: relative;
+                      left: 30px;
+                      right: 0;
+                  }
+                  &:nth-child(3){
+                      position: relative;
+                      bottom: 25%;
+                      left: 25%
+                  }
+              }
+            }
+        }
+      }
+    }
+  }
   

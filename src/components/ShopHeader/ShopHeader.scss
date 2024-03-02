@@ -3,6 +3,10 @@
   padding: 20px 0;
   color: black;
   font-family: Gilroy-Medium;
+  position: fixed;
+  width: 100%;
+  top: 4em;
+  z-index: 99;
   .shopheader-paragraph {
     display: flex;
   }

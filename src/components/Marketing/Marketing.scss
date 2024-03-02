@@ -32,3 +32,32 @@
     }
   }
 }
+
+
+@media (max-width: 756px) {
+  .marketing-main {
+    padding: 30px 0;
+    .marketing-wrapper {
+      h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      .marketing-info {
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        p {
+          width: 100%;
+          font-size: 20px;
+          line-height: 30px;
+          margin-bottom: 10px;
+        }
+        img{
+          width: 100%;
+          height: max-content;
+          margin: auto 0; 
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
