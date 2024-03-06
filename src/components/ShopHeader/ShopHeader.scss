@@ -3,6 +3,10 @@
   padding: 20px 0;
   color: black;
   font-family: Gilroy-Medium;
+  position: fixed;
+  width: 100%;
+  top: 4em;
+  z-index: 9;
   .shopheader-paragraph {
     display: flex;
   }
@@ -13,6 +17,18 @@
   span {
     font-size: 18px;
     align-self: center;
-    margin: auto 0 ;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .shopheader {
+    b {
+      font-size: 20px;
+    }
+    span {
+      font-size: 15px;
+      align-self: center;
+    }
   }
 }

@@ -74,6 +74,8 @@ function Main() {
             </div>
           </>
         )}
+
+        {/* форма вторая везде одинаковая. ее можно просто копировать*/}
         {currentForm == 2 && (
           <>
             <div className="modal-content-wrapper">

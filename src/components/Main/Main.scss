@@ -570,6 +570,105 @@ main {
       }
     }
   }
+  .quote-section {
+    background: linear-gradient(
+      90deg,
+      rgba(24, 28, 35, 1) 50%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(250, 250, 253, 1) 50%
+    );
+    height: 60vh;
+
+    .quote-wrapper {
+      width: 100%;
+      color: red;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    .dark-quote,
+    .light-quote {
+      padding: 0 2%;
+      .dark-quote-wrapper,
+      .light-quote-wrapper {
+        width: 100%;
+        padding: 20px 15px;
+        border-radius: 30px;
+        border-collapse: separate;
+        border: 10px solid transparent;
+        background-image: url("../../images/Blured-Glass.png");
+        // opacity: 0.2;
+        background-blend-mode: multiply;
+        border-image-source: radial-gradient(
+            78.99% 95.57% at 17.38% 2.08%,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(15, 17, 19, 0.1) 100%
+          )
+          /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        .quotes {
+          height: 20px;
+        }
+        background: linear-gradient(
+            142.13deg,
+            rgba(254, 248, 255, 0.21) 1.8%,
+            rgba(254, 248, 255, 0) 99.75%
+          ),
+          radial-gradient(
+            78.99% 95.57% at 17.38% 2.08%,
+            rgba(255, 255, 255, 0.22) 0%,
+            rgba(15, 17, 19, 0.1) 100%
+          );
+      }
+      p {
+        padding: 5%;
+      }
+      .quote-slider {
+        display: flex;
+        justify-content: space-between;
+        div {
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+        }
+        h5 {
+          font-size: 15px;
+        }
+        h6 {
+          font-size: 13px;
+        }
+
+        .left-arrow img {
+          width: 20px;
+        }
+        .right-arrow img {
+          width: 20px;
+        }
+        .slider-avatar {
+          width: 60px;
+          height: 60px;
+          border: 3px solid #ff6201;
+
+          border-image-slice: 1;
+          border-radius: 50px;
+          overflow: hidden;
+          position: relative;
+          margin: 0 auto;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+
+    .light-quote {
+      color: #000000;
+    }
+    .dark-quote {
+      color: #ffffff;
+    }
+  }
 
   .application-form {
     background-color: #fff500;
