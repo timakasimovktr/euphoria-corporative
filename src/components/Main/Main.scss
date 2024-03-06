@@ -62,7 +62,7 @@ main {
     display: flex;
     img {
       height: 100%;
-      width: 120%;
+      width: 100%;
     }
     .complex-info {
       padding: 76px 0;
@@ -627,7 +627,6 @@ main {
 
     .quote-wrapper {
       width: 100%;
-      color: red;
       display: flex;
       height: 100%;
       justify-content: center;
@@ -635,7 +634,16 @@ main {
     }
     .dark-quote,
     .light-quote {
-      padding: 0 2%;
+      // padding: 0 2%;
+      height: 95%;
+      width: 60%;
+      &::before{
+        height: 50%;
+        width: 45%;
+        content:  '';
+        position: absolute;
+        // background-color: red ;
+      }
       .dark-quote-wrapper,
       .light-quote-wrapper {
         width: 100%;

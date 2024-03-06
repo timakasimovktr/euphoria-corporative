@@ -8,6 +8,7 @@ import "./Products.scss";
 import { useNavigate } from "react-router-dom";
 import { APP_ROUTES } from "../../router/Route";
 import ShopHeader from "../ShopHeader/ShopHeader";
+import ProductCard from "../ProductCard/ProductCard";
 
 const Products = () => {
   const navigation = useNavigate();
@@ -26,6 +27,50 @@ const Products = () => {
   };
 
   const info = [
+    {
+      id: 1,
+      category: "Category 1",
+      name: "Multi Health",
+      description: "Чай для похудения",
+      img: "",
+      composition: "изготавливаются...",
+      effect: "предотвращает...",
+      indications: "изготавливаются...",
+      contraindications: "изготавливаются...",
+    },
+    {
+      id: 1,
+      category: "Category 1",
+      name: "Multi Health",
+      description: "Чай для похудения",
+      img: "",
+      composition: "изготавливаются...",
+      effect: "предотвращает...",
+      indications: "изготавливаются...",
+      contraindications: "изготавливаются...",
+    },
+    {
+      id: 1,
+      category: "Category 1",
+      name: "Multi Health",
+      description: "Чай для похудения",
+      img: "",
+      composition: "изготавливаются...",
+      effect: "предотвращает...",
+      indications: "изготавливаются...",
+      contraindications: "изготавливаются...",
+    },
+    {
+      id: 1,
+      category: "Category 1",
+      name: "Multi Health",
+      description: "Чай для похудения",
+      img: "",
+      composition: "изготавливаются...",
+      effect: "предотвращает...",
+      indications: "изготавливаются...",
+      contraindications: "изготавливаются...",
+    },
     {
       id: 1,
       category: "Category 1",
@@ -83,26 +128,7 @@ const Products = () => {
 
               <div className="product-grid">
                 {products.map((item) => (
-                  <div className="product-card" key={item.id}>
-                    <div className="product-image">
-                      <div className="gray-element"></div>
-                      <div className="black-element"></div>
-                      <img src={item.img} alt="" />
-                    </div>
-                    <div className="price-block">
-                      <b>Цена:</b> {item.price} сум
-                    </div>
-                    <h4>{item.name}</h4>
-                    <p>{item.description}</p>
-                    <button
-                      className="products-button"
-                      onClick={() =>
-                        navigation(APP_ROUTES.PRODUCT)
-                      }
-                    >
-                      Подробнее
-                    </button>
-                  </div>
+                  <ProductCard products={item}></ProductCard>
                 ))}
               </div>
             </div>

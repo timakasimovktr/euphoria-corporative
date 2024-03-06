@@ -13,6 +13,7 @@ import ProductSlider from "../ProductSlider/ProductSlider";
 // images
 import productPhoto from "../../images/product-photo.png";
 import checkCircle from "../../images/Check-Circle.svg";
+import ProductCard from "../ProductCard/ProductCard";
 const ProductDetails = () => {
   const products = [
     {
@@ -32,7 +33,7 @@ const ProductDetails = () => {
       name: "Product 2",
       description: "Description 2",
       price: 100000,
-      img: "",
+      img: "../../images/AboutUsPic.png",
       composition: "Composition 2",
       effect: "Effect 2",
       indications: "Indications 2",
@@ -101,7 +102,7 @@ const ProductDetails = () => {
       </Modal>
       <div className="product-details">
         <div className="product-details-wrapper container">
-          <div className="product-card">
+          <div className="product-details-card">
             <div className="product-info-img">
               <ProductSlider slides={slides}></ProductSlider>
             </div>
@@ -179,31 +180,14 @@ const ProductDetails = () => {
         <div className="new-products-wrapper container">
           <h1>Новые товары</h1>
           <hr />
-          <div className="product-grid">
             <div className="product-grid">
               {products.map((item) => (
-                <div className="product-card" key={item.id}>
-                  <div className="product-image">
-                    <div className="gray-element"></div>
-                    <div className="black-element"></div>
-                    <img src={item.img} alt="" />
-                  </div>
-                  <div className="price-block">
-                    <b>Цена:</b> {item.price} сум
-                  </div>
-                  <h4>{item.name}</h4>
-                  <p>{item.description}</p>
-                  <button
-                    className="products-button"
-                    onClick={() => navigation(APP_ROUTES.PRODUCT)}
-                  >
-                    Подробнее
-                  </button>
-                </div>
-              ))}
+             
+             <ProductCard products={item}></ProductCard>
+             
+             ))}
             </div>
           </div>
-        </div>
       </div>
       <Footer></Footer>
     </>

@@ -1,49 +1,98 @@
 .callcenter {
-    padding: 100px 0;
-    .callcenter-wrapper {
-      h1 {
-        font-family: Gilroy-medium;
-        font-size: 55px;
-        font-weight: 600;
-        line-height: 79px;
+  padding: 60px 0;
+  margin-top: 2rem;
+
+  .callcenter-wrapper {
+    h1 {
+      font-family: Gilroy-medium;
+      font-size: 50px;
+      font-weight: 600;
+      line-height: 79px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fff500;
+      margin-bottom: 30px;
+    }
+    .callcenter-info {
+      display: flex;
+      justify-content: space-between;
+      p {
+        width: 35%;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 38px;
         letter-spacing: 0em;
         text-align: left;
-        color: #fff500;
-        margin-bottom: 50px;
+      }
+      .callcenter-imgs {
+        width: 60%;
+        img {
+          width: 45%;
+          border-radius: 30px;
+          height: 50%;
+          &:nth-child(1) {
+            position: relative;
+            top: 50px;
+          }
+          &:nth-child(2) {
+            position: relative;
+            left: 50px;
+          }
+          &:nth-child(3) {
+            position: relative;
+            bottom: 50px;
+            left: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 726px) {
+  .callcenter {
+    margin-top: 2rem;
+
+    padding: 60px 0;
+    .callcenter-wrapper {
+      h1 {
+        font-size: 36px;
+        line-height: normal;
+        margin-bottom: 10px;
       }
       .callcenter-info {
         display: flex;
         justify-content: space-between;
+        flex-direction: column-reverse;
+
         p {
-            width: 35%;
-            font-size: 32px;
-            font-weight: 400;
-            line-height: 38px;
-            letter-spacing: 0em;
-            text-align: left;
-          }
-          .callcenter-imgs{
-            width: 60%;
-            img{
-                width: 45%;
-                border-radius: 30px;
-                height: 50%;
-                &:nth-child(1){
-                    position: relative;
-                    top: 50px;
-                }
-                &:nth-child(2){
-                    position: relative;
-                    left: 50px;
-                }
-                &:nth-child(3){
-                    position: relative;
-                    bottom: 50px;
-                    left: 25%
-                }
+          width: 100%;
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .callcenter-imgs {
+          width: 100%;
+          img {
+            width: 45%;
+            border-radius: 30px;
+            height: 50%;
+            &:nth-child(1) {
+              position: relative;
+              top: 10px;
+            }
+            &:nth-child(2) {
+              position: relative;
+              left: 30px;
+              right: 0;
+            }
+            &:nth-child(3) {
+              position: relative;
+              bottom: 25%;
+              left: 25%;
             }
           }
+        }
       }
     }
   }
-  
+}

@@ -1,13 +1,12 @@
 .product-details {
   background-color: #111;
   .product-details-wrapper {
-    .product-card {
+    .product-details-card {
       display: flex;
       height: 80vh;
       width: 100%;
       .product-info-img {
         width: 50%;
-        height: 40%;
         margin: auto;
       }
       .short-product-info {
@@ -15,6 +14,7 @@
         width: 50%;
         height: 60%;
         display: flex;
+        width: 50%;
         flex-direction: column;
         justify-content: space-between;
         h3 {
@@ -118,113 +118,43 @@
       margin-top: 40px;
       margin-bottom: 50px;
 
-      .product-card {
-        padding: 17px;
-        background-color: #1f1f1f;
-        border-radius: 15px;
-        min-height: 450px;
-        width: 272px;
-
-        .price-block {
-          min-width: 150px;
-          margin-top: 7px;
-          max-width: fit-content;
-          padding: 13px 10px;
-          border-radius: 0 25px 25px 0;
-          background-color: rgba(255, 245, 0, 1);
-          color: rgba(0, 0, 0, 1);
-          font-family: Gilroy-Bold;
-        }
-        h4 {
-          font-family: Gilroy-Medium;
-          font-size: 24px;
-          text-align: center;
-          margin-top: 30px;
-        }
-        .products-button {
-          width: 100%;
-        }
-        p {
-          font-family: Gilroy-Regular;
-          font-size: 16px;
-          color: #a2a2a2;
-          text-align: center;
-          margin-top: 12px;
-        }
-
-        .product-image {
-          height: 50%;
-          width: 100%;
-          border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-          position: relative;
-
-          .gray-element {
-            flex-grow: 1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 80%;
-            background-color: rgba(78, 78, 78, 1);
-            width: 100%;
-          }
-
-          .black-element {
-            background: linear-gradient(
-              1.2deg,
-              #080808 53.89%,
-              rgba(78, 78, 78, 0) 98.98%
-            );
-            border-radius: 0px 0px 122px 122px;
-
-            position: absolute;
-            left: 10%;
-            height: 100%;
-            width: 80%;
-          }
-        }
-      }
+     
     }
   }
 }
 
 @media (max-width:768px) {
   .product-details {
+    margin-top: 8em;
+
     .product-details-wrapper {
-      .product-card {
+    .product-details-card {
         display: flex;
         height: 100%;
         width: 100%;
         flex-direction: column;
         .product-info-img {
-          width: 100%;
-          height: 40%;
+          min-width: 100%;
+          min-height: 40%;
           margin:  0 auto;
         }
         .short-product-info {
           margin-top: 50px;
           width: 100%;
           padding-bottom: 30px;
-          height: 60%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
           h3 {
-            font-size: 30px;
-            font-family: gilroy-medium;
-            margin-bottom: 20px;
+            font-size: 25px;
+            margin-bottom: 10px;
           }
           .product-price {
-            font-family: Gilroy-regular;
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 400;
-            line-height: 26px;
-            margin-bottom: 20px;
+            line-height: normal;
+            margin-bottom: 10px;
           }
           .product-description {
             font-family: Gilroy-light;
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 300;
             line-height: 43px;
             letter-spacing: 0em;
@@ -253,7 +183,8 @@
               p:nth-child(1) {
                 color: #888;
                 font-size: 20px;
-                margin-bottom: 10px;
+                font-size: 15px;
+                margin: 0 10px 5px;
               }
             }
           }
@@ -263,12 +194,12 @@
   }
   .product-description-block {
     .product-description-block-wrapper {
-      padding: 40px 20px;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
       .product-description-grid {
         display: grid;
-        gap: 50px;
+        gap: 25px;
         row-gap: 20px;
         grid-template-columns: 1fr 1fr;
         flex-direction: row;
@@ -276,14 +207,15 @@
           width: 100%;
           .product-param {
             font-family: Gilroy-Medium;
-            font-size: 36px;
+            font-size: 30px;
             font-weight: 500;
-            line-height: 44px;
+            line-height: 40px;
             letter-spacing: 0em;
             text-align: left;
+            text-transform: capitalize;
           }
           p {
-            font-size: 16px;
+            font-size: 13px;
           }
         }
       }
@@ -292,91 +224,26 @@
 
   .new-products {
     .new-products-wrapper {
-      padding: 50px 0;
+      padding: 25px 0;
       h1 {
         text-align: center;
-        margin: 15px 0;
+        font-size: 26px;
+        margin: 0 0 15px 0;
       }
       hr {
       }
   
       .product-grid {
         display: grid;
-        justify-content: space-between;
         grid-template-columns: 1fr 1fr;
         width: 100%;
-        gap: 30px;
+        gap: 7px;
         margin-top: 20px;
         margin-bottom: 50px;
+        justify-items: center;
         padding: 0 10px;
   
-        .product-card {
-          padding: 17px;
-          background-color: #1f1f1f;
-          border-radius: 15px;
-          min-height: 450px;
-          width: 230px;
-  
-          .price-block {
-            min-width: 150px;
-            margin-top: 7px;
-            max-width: fit-content;
-            padding: 13px 10px;
-            border-radius: 0 25px 25px 0;
-            background-color: rgba(255, 245, 0, 1);
-            color: rgba(0, 0, 0, 1);
-            font-family: Gilroy-Bold;
-          }
-          h4 {
-            font-family: Gilroy-Medium;
-            font-size: 24px;
-            text-align: center;
-            margin-top: 30px;
-          }
-          .products-button {
-            width: 100%;
-          }
-          p {
-            font-family: Gilroy-Regular;
-            font-size: 16px;
-            color: #a2a2a2;
-            text-align: center;
-            margin-top: 12px;
-          }
-  
-          .product-image {
-            height: 50%;
-            width: 100%;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-  
-            .gray-element {
-              flex-grow: 1;
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: 80%;
-              background-color: rgba(78, 78, 78, 1);
-              width: 100%;
-            }
-  
-            .black-element {
-              background: linear-gradient(
-                1.2deg,
-                #080808 53.89%,
-                rgba(78, 78, 78, 0) 98.98%
-              );
-              border-radius: 0px 0px 122px 122px;
-  
-              position: absolute;
-              left: 10%;
-              height: 100%;
-              width: 80%;
-            }
-          }
-        }
+      
       }
     }
   }
