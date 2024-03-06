@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // outline: 1px solid red;
 }
 
 body {
@@ -42,20 +43,11 @@ p{
 a{
   color: #ffffff;
   text-decoration: none;
-  cursor: pointer !important;
-  transition: 0.3s;
-  &:hover{
-    filter: brightness(0.5);
-  }
 }
 .container {
-  max-width: 1570px;
+  max-width: 1220px;
   margin: 0 auto;
-}
-
-.container-complex{
-  max-width: 675px;
-  padding: 0 15px;
+  // overflow: hidden;
 }
 
 @media(max-width: 768px){
