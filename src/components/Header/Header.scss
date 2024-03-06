@@ -12,13 +12,14 @@ header {
     align-items: center;
     width: 100%;
     .header-logo {
-      width: 202px;
+      transform: translateY(4px);
+      width: 50%;
       height: 34px;
     }
     .header-menu {
       display: flex;
-      justify-content: space-between;
-      width: 45%;
+      justify-content: flex-end;
+      width: 70%;
       align-items: center;
       nav input[type="checkbox"],
       nav .hamburger-lines {
@@ -35,6 +36,7 @@ header {
           align-self: center;
 
           a {
+            font-size: 16px;
             &:active {
               text-decoration: underline;
             }
@@ -54,15 +56,19 @@ header {
   background-color: #313131;
   border: 1px solid #e6e6e6;
   border-radius: 18px;
-  position: fixed;
-  right: 0;
+  position: absolute;
+  transform: translateX(-50%) translateY(10px);
   p {
     font-size: 20px;
+    margin-right: 10px;
   }
-  div {
+  a {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    &:last-child{
+      margin-top: 10px;
+    }
   }
 }
 

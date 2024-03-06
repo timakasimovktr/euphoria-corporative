@@ -23,14 +23,15 @@ function Main() {
       name: "Complex Support",
       img: complexSupport,
       description: "Lorem Ipsum",
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      quote:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
     {
       name: "ddd Support",
       img: complexSupport,
       description: "Lorem Ipsum",
-      quote: "Lorem ipsu veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-
+      quote:
+        "Lorem ipsu veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
   ];
 
@@ -100,7 +101,7 @@ function Main() {
       </Modal>
       <main>
         <div className="main-wrapper container">
-          <div style={{ width: "55%" }} className="first-main-wrapper">
+          <div className="first-main-wrapper">
             <div>
               <h1>СОЗДАВАЙТЕ СВОЮ ЭЙФОРИЮ С НАМИ КАЖДЫЙ ДЕНЬ.</h1>
               <p>Тут будет текст, который добавится позже</p>
@@ -111,23 +112,22 @@ function Main() {
               <div className="card"></div>
             </div>
           </div>
-          <div className="second-main-wrapper" style={{ width: "40%", display: "flex" }}>
+          <div className="second-main-wrapper">
             <img src={mainBanner} alt="" />
           </div>
         </div>
       </main>
       <div className="complex-support">
-        <div className="complex-support-wrapper container">
-          <div className="complex-info">
+        <div className="complex-support-wrapper">
+          <div className="complex-info container-complex">
             <div>
               <h1>Комплексная поддержка организма</h1>
               <p>Не знаете, с чего начать? </p>
               <p>
                 Пройдите онлайн-опрос, что бы выбрать подхлдящй набор продуктов
               </p>
+              <button>Каталог</button>
             </div>
-
-            <button>Каталог</button>
           </div>
           <div className="complex-image">
             <img src={complexSupport} alt="" />
@@ -135,8 +135,8 @@ function Main() {
         </div>
       </div>
       <div className="marketing">
-        <div className="marketing-wrapper container">
-          <div className="marketing-info">
+        <div className="marketing-wrapper">
+          <div className="marketing-info container-complex">
             <h2>Маркетинг</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -180,32 +180,21 @@ function Main() {
             <img src={marketingLineBG} alt="" />
           </div>
         </div>
-        {/* <div className="quote-block">
-            <h3>Heading</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div> */}
       </div>
       {/* slider triangles */}
       <div className="euphoria-partnership">
         <div className="euphoria-partnership-wrapper container">
           <h2>Получите все привелегии Эйфории</h2>
           <div className="partnership-info">
-            <img src={euphoriaRefferal} alt="" />
             <div>
+              <h3>Реферральная система</h3>
               <p>
                 Реферальная платформа создана для того что бы каждый мог
                 зарабатывать на том на чем он будет зарабатывать
               </p>
               <button>Стать Партнером</button>
             </div>
+            <img src={euphoriaRefferal} alt="" />
           </div>
         </div>
       </div>
@@ -248,22 +237,7 @@ function Main() {
       </div>
       {/* в quote section не получилось добавить бекгруанд с фигурками и стеклянный фон поставился странно */}
       <div className="quote-section">
-        <div className="quote-wrapper container">
-          <div className="dark-quote">
-            <div className="dark-quote-wrapper">
-              <img className="quotes" src={quotationMark} alt="" />
-            
-              <Slider slides={slides} dark={false}></Slider>
-            </div>
-          </div>
-          <div className="light-quote">
-            <div className="light-quote-wrapper">
-              <img src={quotationMark} alt="" />
-
-              <Slider slides={slides} dark={true}></Slider>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <div className="application-form">

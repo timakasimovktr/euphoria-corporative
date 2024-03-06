@@ -1,42 +1,40 @@
 main {
-  height: 80vh;
-  // background-image: url("../../images/Main-Bg.svg");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
   display: flex;
   flex-direction: column; // Change flex direction to column to stack children vertically
-  justify-content: space-between; // Add space between main and footer
-  padding: 70px 0 0 0;
-  margin-bottom: 100px;
+  justify-content: center;
+  height: calc(100vh - 65px); // Add space between main and footer
+  min-height: 545px;
   .main-wrapper {
     display: flex;
     justify-content: space-between;
-    height: 100%;
-
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
     .first-main-wrapper {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      width: 55%;
+      justify-content: space-around;
+      width: 60%;
 
       h1 {
-        color: #a5a000;
-        line-height: 80px;
+        color: #FFF500;
         font-family: Gilroy-Bold;
+        font-size: 40px;
+        letter-spacing: 1px;
       }
 
       p {
-        margin-top: 25px;
-        font-size: 36px;
+        margin-top: 26px;
+        font-size: 22px;
         font-family: gilroy-regular;
       }
 
       .card-wrapper {
+        margin-top: 26px;
         display: flex;
         align-self: flex-end; // Align cards to the bottom
-        width: 110%;
-        height: 41%;
+        width: 100%;
+        // height: 41%;
         align-self: stretch;
         z-index: 1;
         justify-content: space-between;
@@ -45,13 +43,26 @@ main {
         .card {
           width: 30%;
           height: 90%;
+          min-height: 200px;
+          min-width: 200px;
           background-color: white;
           border-radius: 12px;
           &:nth-child(2) {
             width: 35%;
             height: 100%;
+            min-height: 250px;
+            min-height: 250px;
           }
         }
+      }
+    }
+    .second-main-wrapper{
+      width: 40%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      img {
+        width: 80%;
       }
     }
   }
@@ -60,24 +71,32 @@ main {
   background-color: #1f1f1f;
   .complex-support-wrapper {
     display: flex;
+    justify-content: flex-end;
     img {
       height: 100%;
-      width: 120%;
+      width: 100%;
     }
     .complex-info {
-      padding: 76px 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       width: 50%;
+
+      h1{
+        font-size: 40px;
+        letter-spacing: 1px;
+      }
       p {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
         &:first-of-type {
           margin-top: 33px;
         }
       }
       button {
+        margin-top: 33px;
         background-color: #fff500;
         color: #000000;
         font-size: 20px;
@@ -87,6 +106,10 @@ main {
         border-radius: 16px;
         font-family: Gilroy-medium;
       }
+    }
+
+    .complex-image{
+      width: 50%;
     }
   }
 }
@@ -102,36 +125,51 @@ main {
   .marketing-wrapper {
     width: 100%;
     display: flex;
+    justify-content: flex-end;
 
     .marketing-info {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
       width: 50%;
-      padding: 65px 65px 0 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      padding-right: 50px;
 
       h2 {
-        font-weight: 500;
-        font-size: 73.38px;
+        font-weight: 700;
+        font-size: 50px;
+        margin-bottom: 10px;
       }
       p {
+        font-size: 18px;
         margin-bottom: 20px;
       }
       button {
         color: #ffffff;
         background-color: #010101;
-        font-size: 27px;
+        font-size: 22px;
         font-weight: 300;
         border-radius: 15px;
-        padding: 35px 45px;
+        padding: 15px 30px;
         display: flex;
         font-family: Gilroy-Regular;
         font-style: italic;
+        border: none;
         svg {
           align-self: center;
+          padding-top: 3px;
+          margin-left: 10px;
+          width: 15px;
+          height: 15px;
         }
       }
     }
     .marketing-image {
       width: 50%;
       img {
+        max-height: 650px;
         height: 100%;
         width: 100%;
       }
@@ -141,26 +179,41 @@ main {
 
 .euphoria-partnership {
   background-color: #1f1f1f;
+  padding-bottom: 50px;
   .euphoria-partnership-wrapper {
     h2 {
       font-family: Gilroy-Bold;
-      font-size: 55px;
+      font-size: 40px;
       font-weight: 700;
       text-align: center;
       padding-top: 30px;
-      margin-bottom: 80px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
     }
     .partnership-info {
       display: flex;
       justify-content: space-between;
+      &>img{
+        width: 50%;
+        padding-left: 15px;
+      }
       div {
-        width: 30%;
+        width: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: flex-start;
+        h3{
+          font-size: 30px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          text-align: left;
+        }
         p {
           font-weight: 300;
-          line-height: 43px;
+          font-size: 22px;
+          line-height: 30px;
+          text-align: left;
         }
         img {
           box-shadow: 0px 3.8592967987060547px 3.8592967987060547px 0px
@@ -174,11 +227,11 @@ main {
           color: #000000;
           font-size: 20px;
           font-weight: 500;
-          width: 100%;
-          padding: 30px 75px;
+          padding: 15px 30px;
+          // margin: 0 auto;
+          margin-top: 30px;
           border-radius: 16px;
           font-family: Gilroy-bold;
-          margin: 0 auto;
         }
       }
     }
@@ -190,27 +243,29 @@ main {
   height: fit-content;
   .survey-block-wrapper {
     display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
     .survey-info {
       width: 50%;
       justify-self: center;
       align-self: center;
-      padding: 200px 0;
+      // padding: 200px 0;
       h2 {
         font-family: Gilroy-Bold;
         font-size: 48px;
         font-weight: 700;
-        margin-bottom: 60px;
       }
       hr {
         background-color: #fff500;
-        height: 9px;
+        height: 5px;
         max-width: 250px;
         margin: 30px 0;
+        border: none;
       }
       button {
         background-color: transparent;
         border: #fff700 solid 2px;
-        padding: 29px 85px;
+        padding: 15px 30px;
         color: #ffffff;
         font-family: gilroy-bold;
         border-radius: 15px;
@@ -224,11 +279,12 @@ main {
         background-color: #fff500;
         border: 1px solid #000000;
         width: 40%;
-        transform: rotate(-35deg);
+        transform: rotate(-35deg) translate(30%, 30%);
         position: relative;
-
+        box-shadow: 100px 0 100px 1px rgba(255, 255, 0, 0.071);
         border-radius: 50px;
         height: 25%;
+        min-height: 180px;
         &:nth-child(3),
         &:nth-child(4) {
           background-color: #303030;
@@ -256,120 +312,6 @@ main {
   }
 }
 
-.quote-section {
-  background: linear-gradient(
-    90deg,
-    rgba(24, 28, 35, 1) 50%,
-    rgba(255, 255, 255, 1) 50%,
-    rgba(250, 250, 253, 1) 50%
-  );
-  height: 70vh;
-
-  .quote-wrapper {
-    width: 100%;
-    color: red;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  .dark-quote,
-  .light-quote {
-    width: 50%;
-    height: 80%;
-    padding: 0 6%;
-
-    //
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .dark-quote-wrapper,
-    .light-quote-wrapper {
-      width: 100%;
-      min-height: 100%;
-      padding: 70px 50px;
-      border-radius: 50px;
-      border-collapse: separate;
-      border: 19px solid transparent;
-      background-image: url("../../images/Blured-Glass.png");
-      // opacity: 0.2;
-      background-blend-mode: multiply;
-      border-image-source: radial-gradient(
-          78.99% 95.57% at 17.38% 2.08%,
-          rgba(255, 255, 255, 0.22) 0%,
-          rgba(15, 17, 19, 0.1) 100%
-        )
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-
-      background: linear-gradient(
-          142.13deg,
-          rgba(254, 248, 255, 0.21) 1.8%,
-          rgba(254, 248, 255, 0) 99.75%
-        ),
-        radial-gradient(
-          78.99% 95.57% at 17.38% 2.08%,
-          rgba(255, 255, 255, 0.22) 0%,
-          rgba(15, 17, 19, 0.1) 100%
-        );
-
-      //
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      img{width: fit-content;}
-    }
-    p {
-      padding: 5%;
-    }
-    .quote-slider {
-      width: 100%;
-      display: flex;
-      align-self: flex-end;
-      justify-content: space-between;
-      div {
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-      }
-      h5 {
-        font-size: 19px;
-        text-transform: uppercase;
-        font-family: gilroy-medium;
-        text-align: center;
-      }
-      h6 {
-        font-size: 18px;
-        font-family: gilroy-thin;
-        text-align: center;
-      }
-      .slider-avatar {
-        width: 60px;
-        height: 60px;
-        border: 3px solid #ff6201;
-        object-fit: cover;
-        border-image-slice: 1;
-        border-radius: 50px;
-        overflow: hidden;
-        position: relative;
-        margin: 0 auto;
-      }
-      button {
-        background-color: transparent;
-        border: none;
-      }
-    }
-  }
-
-  .light-quote {
-    color: #000000;
-  }
-  .dark-quote {
-    color: #ffffff;
-  }
-}
-
 .application-form {
   background-color: #fff500;
   height: max-content;
@@ -378,47 +320,59 @@ main {
     display: flex;
     width: 100%;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
     .application-form-info {
       width: 50%;
       padding-right: 100px;
       h3 {
-        font-family: Gilroy-medium;
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 50px;
+        font-family: Gilroy-bold;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-size: 40px;
+        font-weight: 700;
       }
       p {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 300;
-        line-height: 43px;
-        letter-spacing: 0em;
+        line-height:35px;
+        letter-spacing: 0.2px;
         text-align: left;
       }
     }
     .application-form-send {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 30%;
       margin: auto;
-      padding-top: 100px;
-      padding-bottom: 25px;
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
       input {
         background: rgba(218, 218, 218, 0.5);
-        padding: 35px 30px;
+        padding: 15px 30px;
         border-radius: 10px;
+        font-size: 18px;
         width: 100%;
         margin-bottom: 20px;
+        outline: none;
         &::placeholder {
           color: rgba(0, 0, 0, 0.35);
           font-family: gilroy-medium;
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       button {
         background-color: #000000;
         color: #d8c831;
         width: fit-content;
-        padding: 26px 84px;
+        padding: 15px 30px;
         font-size: 20px;
         margin: 0 auto;
         font-family: gilroy-bold;
@@ -440,7 +394,7 @@ main {
         }
       }
       .first-main-wrapper {
-        width: 55%;
+        width: 50%;
 
         h1 {
           line-height: normal;
@@ -614,105 +568,6 @@ main {
           }
         }
       }
-    }
-  }
-  .quote-section {
-    background: linear-gradient(
-      90deg,
-      rgba(24, 28, 35, 1) 50%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(250, 250, 253, 1) 50%
-    );
-    height: 60vh;
-
-    .quote-wrapper {
-      width: 100%;
-      color: red;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-    .dark-quote,
-    .light-quote {
-      padding: 0 2%;
-      .dark-quote-wrapper,
-      .light-quote-wrapper {
-        width: 100%;
-        padding: 20px 15px;
-        border-radius: 30px;
-        border-collapse: separate;
-        border: 10px solid transparent;
-        background-image: url("../../images/Blured-Glass.png");
-        // opacity: 0.2;
-        background-blend-mode: multiply;
-        border-image-source: radial-gradient(
-            78.99% 95.57% at 17.38% 2.08%,
-            rgba(255, 255, 255, 0.22) 0%,
-            rgba(15, 17, 19, 0.1) 100%
-          )
-          /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-        .quotes {
-          height: 20px;
-        }
-        background: linear-gradient(
-            142.13deg,
-            rgba(254, 248, 255, 0.21) 1.8%,
-            rgba(254, 248, 255, 0) 99.75%
-          ),
-          radial-gradient(
-            78.99% 95.57% at 17.38% 2.08%,
-            rgba(255, 255, 255, 0.22) 0%,
-            rgba(15, 17, 19, 0.1) 100%
-          );
-      }
-      p {
-        padding: 5%;
-      }
-      .quote-slider {
-        display: flex;
-        justify-content: space-between;
-        div {
-          justify-content: center;
-          display: flex;
-          flex-direction: column;
-        }
-        h5 {
-          font-size: 15px;
-        }
-        h6 {
-          font-size: 13px;
-        }
-
-        .left-arrow img {
-          width: 20px;
-        }
-        .right-arrow img {
-          width: 20px;
-        }
-        .slider-avatar {
-          width: 60px;
-          height: 60px;
-          border: 3px solid #ff6201;
-
-          border-image-slice: 1;
-          border-radius: 50px;
-          overflow: hidden;
-          position: relative;
-          margin: 0 auto;
-        }
-        button {
-          background-color: transparent;
-          border: none;
-        }
-      }
-    }
-
-    .light-quote {
-      color: #000000;
-    }
-    .dark-quote {
-      color: #ffffff;
     }
   }
 

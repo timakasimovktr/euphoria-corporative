@@ -43,38 +43,27 @@ const Header = () => {
                 <li>
                   <a href="">О нас</a>
                 </li>
-                {/* <li className="change-language-mobile">
-                  <b>Поменять язык</b>
-                </li> */}
               </ul>
             </div>
           </nav>
           <div className="change-language">
-            {changeLanguage ? (
-              <img
-                onClick={() => setChangeLanguage(false)}
-                src={globalIcon}
-                alt=""
-              />
-            ) : (
-              <img
-                onClick={() => setChangeLanguage(true)}
-                src={globalIcon}
-                alt=""
-              />
-            )}
+            <img
+              onClick={() => setChangeLanguage(!changeLanguage)}
+              src={globalIcon}
+              alt=""
+            />
 
             {changeLanguage && (
               <>
                 <div className="change-language-block">
-                  <div>
+                  <a>
                     <p>Русский</p>
                     <img src={rusFlag} alt="rus" />
-                  </div>
-                  <div>
+                  </a>
+                  <a>
                     <p>Узбекский</p>
                     <img src={uzbFlag} alt="uzb" />
-                  </div>
+                  </a>
                 </div>
               </>
             )}
