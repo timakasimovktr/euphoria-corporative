@@ -15,9 +15,9 @@ const Footer = () => {
               <img src={euphoriaLogo} alt="" />
             </div>
 
-            <div style={{ width: "60%" }}>
+            <div className="footer-links-row" style={{ width: "70%" }}>
               <div className="footer-col">
-                <a href="" bold>
+                <a href="">
                   <b>Оставить заявку</b>
                 </a>
                 <a href="">Отзывы</a>
