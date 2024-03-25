@@ -329,15 +329,37 @@ main {
     }
   }
 
+
+  @keyframes complexAnimation {
+    0% {
+      background-position: 0% 50%;
+      background-size: 100% 100%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+      background-size: 120% 120%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+      background-size: 100% 100%;
+    }
+  }
+  
+
   .imgWithTxtImg {
+    overflow: hidden;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 600px;
+    &:not(.withoutAnimation){
+      animation: complexAnimation 20s infinite linear;
+    }
   }
 }
 
@@ -1130,7 +1152,7 @@ main {
     .imgWithTxtHeading {
       width: 100%;
 
-      h2{
+      h2 {
         font-size: 28px;
         line-height: 35px;
       }
@@ -1215,12 +1237,13 @@ main {
     }
   }
 
-  .contactUs{
+  .contactUs {
     padding: 30px 0;
-    .container{
+
+    .container {
       flex-direction: column;
 
-      .contactUsTxt{
+      .contactUsTxt {
         width: 100%;
         padding-right: 0;
         margin-bottom: 30px;
@@ -1228,35 +1251,35 @@ main {
         justify-content: center;
         align-items: center;
 
-        h2{
+        h2 {
           font-size: 28px;
         }
 
-        p{
+        p {
           font-size: 18px;
         }
 
-        *{
+        * {
           text-align: center !important;
         }
       }
 
-      .contactUsForm{
+      .contactUsForm {
         width: 100%;
         padding: 0;
 
-        form{
-          input{
+        form {
+          input {
             font-size: 16px;
           }
 
-          button{
+          button {
             font-size: 16px;
           }
         }
 
-        h2{
-          font-size: 28px;  
+        h2 {
+          font-size: 28px;
         }
       }
     }
@@ -1265,24 +1288,24 @@ main {
 
 @media screen and (max-width: 576px) {
 
-  .mainBanner{
-    .mainBannerHeading{
-      h1{
+  .mainBanner {
+    .mainBannerHeading {
+      h1 {
         font-size: 28px;
         line-height: 35px;
       }
 
-      p{
+      p {
         font-size: 18px;
       }
     }
 
-    .mainBannerCards{
-      .slideWrapper{
-        .swiperSlide{
+    .mainBannerCards {
+      .slideWrapper {
+        .swiperSlide {
           height: 300px;
 
-          img{
+          img {
             max-height: 200px;
           }
         }
@@ -1290,35 +1313,41 @@ main {
     }
   }
 
-  .comments{
-    .commentsSlides{
+  .comments {
+    .commentsSlides {
       .commentsBgWrapper {
         .commentsSideBgWrapper {
           width: 340px;
           height: 340px;
           margin: 30px 0;
-  
+
           .commentsSideBgSecondWrapper {
             width: 310px;
             height: 310px;
 
-            .slideWrapper{
-              p{
+            .slideWrapper {
+              p {
                 font-size: 12px;
                 line-height: 20px;
               }
 
-              h3{
+              h3 {
                 font-size: 14px;
               }
 
-              h4{
+              h4 {
                 font-size: 12px;
               }
             }
           }
         }
       }
+    }
+  }
+
+  .imgWithTxt {
+    .imgWithTxtImg {
+      animation: none !important;
     }
   }
 
@@ -1345,7 +1374,7 @@ main {
         padding-right: 10px;
         margin-top: 30px;
 
-        &>div{
+        &>div {
           flex-direction: column;
         }
 
@@ -1361,6 +1390,12 @@ main {
         padding: 15px 42px;
         font-size: 20px;
       }
+    }
+  }
+
+  .imgWithTxt {
+    .imgWithTxtHeading {
+      padding: 15px;
     }
   }
 }

@@ -4,26 +4,35 @@ import { Autoplay, Navigation, EffectCards, FreeMode } from "swiper/modules";
 import "swiper/css/bundle";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./Product.scss";
 import { Outlet, Link } from "react-router-dom";
 import { APP_ROUTES } from "../../router/Route";
-import productItem from "../../images/productItem.png";
-import productItemAfter from "../../images/productItemAfter.png";
 import successOrder from "../../images/successOrder.svg";
-import complexSupport from "../../images/Complex-Sup-Woman.png";
-//images
-import rightArrow from "../../images/sliderArrow.png";
+import productDesc1 from "../../images/productDesc1.jpg";
+import productDesc2 from "../../images/productDesc2.jpg";
+import productDesc3 from "../../images/productDesc3.jpg";
 
-//sections
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 function Product() {
   const [qty, setQty] = useState(0);
+  const [orderInfo, setOrderInfo] = useState({
+    name: "",
+    surname: "",
+    phone: "",
+    city: "",
+    product_id: +window.location.pathname.split("/")[2],
+    count: qty,
+  });
   const [orederStep1, setOrderStep1] = useState(true);
   const [orederStep2, setOrderStep2] = useState(false);
   const [isOpenOrder, setIsOpenOrder] = useState(false);
   const [productObj, setProductObj] = useState({});
+  const [productCategory, setProductCategory] = useState({});
   const [isLoader, setIsLoader] = useState(true);
 
   useEffect(() => {
@@ -46,13 +55,27 @@ function Product() {
     }, 500);
   };
 
+  const getProductCategory = async (id) => {
+    const apiUrl = `${APP_ROUTES.URL}/category/${id}`;
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setProductCategory(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     const id = window.location.pathname.split("/")[2];
     const apiUrl = `${APP_ROUTES.URL}/products/${id}`;
 
     axios
       .get(apiUrl)
-      .then((response) => {
+      .then(async (response) => {
+        if (!response.data) window.location.href = "/catalog";
+        getProductCategory(response.data.category_id);
         setProductObj(response.data);
       })
       .catch((error) => {
@@ -60,16 +83,43 @@ function Product() {
       });
   }, []);
 
+  const sendOrder = () => {
+    if (
+      orderInfo.name &&
+      orderInfo.surname &&
+      orderInfo.phone &&
+      orderInfo.city
+    ) {
+      axios
+        .post(`${APP_ROUTES.URL}/orders`, orderInfo)
+        .then((response) => {
+          setOrderStep2(true);
+          setOrderStep1(false);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      toast.error("Заполните все поля!");
+    }
+  };
+
   useEffect(() => {
     if (productObj) {
       setIsLoader(false);
     }
   });
 
+  const clickOnOrderBtn = () => {
+    if (qty === 0) return toast.error("Выберите количество товара!");
+    setIsOpenOrder(true);
+  };
+
   return (
     <>
       <Header hiddenLoader={isLoader}></Header>
-      <main>
+      <main className={productObj.color === 2 && "lightTheme"}>
+        <ToastContainer />
         <div
           className={`orderPopup ${isOpenOrder ? "" : "hidden"}`}
           onClick={() => closePopup()}
@@ -78,23 +128,53 @@ function Product() {
             <div className="closePopup" onClick={() => closePopup()}></div>
             <div className={`orderStep1 ${orederStep1 ? "" : "hidden"}`}>
               <h3>Оформить заказ</h3>
-              <input type="text" placeholder="Имя" maxLength="30" />
-              <input type="text" placeholder="Фамилия" maxLength="30" />
-              <input type="tel" placeholder="Номер телефона" maxLength="13" />
-              <select name="" id="">
-                <option value="" disabled hidden>
+              <input
+                type="text"
+                onChange={(e) =>
+                  setOrderInfo({ ...orderInfo, name: e.target.value })
+                }
+                placeholder="Имя"
+                maxLength="30"
+              />
+              <input
+                type="text"
+                onChange={(e) =>
+                  setOrderInfo({ ...orderInfo, surname: e.target.value })
+                }
+                placeholder="Фамилия"
+                maxLength="30"
+              />
+              <input
+                onChange={(e) =>
+                  setOrderInfo({ ...orderInfo, phone: e.target.value })
+                }
+                type="tel"
+                placeholder="Номер телефона"
+                maxLength="13"
+              />
+              <select
+                name=""
+                id=""
+                onChange={(e) =>
+                  setOrderInfo({ ...orderInfo, city: e.target.value })
+                }
+              >
+                <option value="" hidden>
                   Город
                 </option>
-                <option value="">Ташкент</option>
-                <option value="">Самарканд</option>
-                <option value="">Карши</option>
-                <option value="">Бухара</option>
-                <option value="">Джизах</option>
+                <option value="Ташкент">Ташкент</option>
+                <option value="Самарканд">Самарканд</option>
+                <option value="Карши">Карши</option>
+                <option value="Бухара">Бухара</option>
+                <option value="Джизах">Джизах</option>
+                <option value="Андижан">Андижан</option>
+                <option value="Наманган">Наманган</option>
+                <option value="Фергана">Фергана</option>
+                <option value="Хорезм">Хорезм</option>
+                <option value="Навои">Навои</option>
+                <option value="Кашкадарья">Кашкадарья</option>
               </select>
-              <button
-                className="sendOrder"
-                onClick={() => [setOrderStep2(true), setOrderStep1(false)]}
-              >
+              <button className="sendOrder" onClick={() => sendOrder()}>
                 Заказать
               </button>
             </div>
@@ -102,6 +182,7 @@ function Product() {
               <img src={successOrder} alt={successOrder} />
               <h3>Заявка принята</h3>
               <p>
+                Ваш заказ: {productObj.title} <br /> Количество: {qty} <br />{" "}
                 Наш сотрудник свяжется с вами <br /> в ближайшее время!
               </p>
             </div>
@@ -129,27 +210,49 @@ function Product() {
               slidesPerView={1}
               className="productSwiper"
             >
-              <SwiperSlide className="slideWrapper">
-                <img src={productObj.image} alt={productObj.image} />
-              </SwiperSlide>
-              <SwiperSlide className="slideWrapper">
-                <img src={productObj.image} alt={productObj.image} />
-              </SwiperSlide>
+              {productObj?.image?.images.map((item, index) => (
+                <SwiperSlide key={index} className="slideWrapper">
+                  <img src={item} alt={item} />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
           <div className="productDescription">
             <h1>{productObj.title}</h1>
             <p>{productObj.description}</p>
+            <div className="categoryWrapper">
+              <div className="categoryItem">
+                <Link reloadDocument to={`/collection/${productCategory.id}`}>
+                  {productCategory.title}
+                </Link>
+              </div>
+            </div>
             <h3>{productObj.price?.toLocaleString()} сум</h3>
             <div className="orderWrapper">
-              <button onClick={() => setIsOpenOrder(true)}>Заказать</button>
+              <button onClick={() => clickOnOrderBtn()}>Заказать</button>
               <div className="qtyInput">
                 <p>Количество:</p>
-                <div className="minus" onClick={() => setQty(qty && qty - 1)}>
+                <div
+                  className="minus"
+                  onClick={() =>
+                    setQty(
+                      qty && [
+                        qty - 1,
+                        setOrderInfo({ ...orderInfo, count: qty - 1 }),
+                      ]
+                    )
+                  }
+                >
                   -
                 </div>
                 <div className="number">{qty}</div>
-                <div className="plus" onClick={() => setQty(qty + 1)}>
+                <div
+                  className="plus"
+                  onClick={() => [
+                    setQty(qty + 1),
+                    setOrderInfo({ ...orderInfo, count: qty + 1 }),
+                  ]}
+                >
                   +
                 </div>
               </div>
@@ -161,97 +264,61 @@ function Product() {
             <div className="productRulesWrapper">
               <div className="rule">
                 <h3>Состав:</h3>
-                <p>
-                  Изготавливаются в форме органоспецифических протеолипосом
-                  путем купажирования различных растений.
-                </p>
+                <p>{productObj.compound}</p>
               </div>
               <div className="rule">
                 <h3>Действие препарата: </h3>
-                <p>
-                  Предотвращает развитие простаты. Уменьшает воспаление
-                  простаты. Улучшение мочеиспускание.
-                </p>
+                <p>{productObj.action}</p>
               </div>
             </div>
             <div className="productRulesWrapper">
               <div className="rule">
                 <h3>Показания:</h3>
-                <p>
-                  Андросома применяется для повышения уровня тестостерона у
-                  мужчин, для лечения эректильной дисфункции.
-                </p>
+                <p>{productObj.testimony}</p>
               </div>
               <div className="rule">
                 <h3>Противопоказания: </h3>
-                <p>
-                  Повышенная чувствительность к одному или нескольким
-                  компонентам препарата.
-                </p>
+                <p>{productObj.contraction}</p>
               </div>
             </div>
           </div>
         </section>
-        <section className="imgWithTxt rightTxt">
-          <div className="imgWithTxtHeading">
-            <h2>Комплексная поддержка организма</h2>
-            <p>
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-              он сих агентство своего. Необходимыми диких алфавит встретил
-              строчка имеет они запятых дорогу, до то большой, сбить даль, не
-              текстами ее взобравшись сих решила наш правилами страна точках
-              подзаголовок скатился вопроса. Это послушавшись своих щеке
-              пустился предложения они коварный запятых подзаголовок вопроса,
-              единственное жизни грустный.
-            </p>
-            {/* <Link to={APP_ROUTES.CATALOG} className="br10">
-              Каталог
-            </Link> */}
-          </div>
-          <div
-            className="imgWithTxtImg"
-            style={{ backgroundImage: `url(${complexSupport})` }}
-          ></div>
-        </section>
-        <section className="imgWithTxt leftTxt">
-          <div className="imgWithTxtHeading">
-            <h2>Комплексная поддержка организма</h2>
-            <p>
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-              он сих агентство своего. Необходимыми диких алфавит встретил
-              строчка имеет они запятых дорогу, до то большой, сбить даль, не
-              текстами ее взобравшись сих решила наш правилами страна точках
-              подзаголовок скатился вопроса. Это послушавшись своих щеке
-              пустился предложения они коварный запятых подзаголовок вопроса,
-              единственное жизни грустный.
-            </p>
-          </div>
-          <div
-            className="imgWithTxtImg"
-            style={{ backgroundImage: `url(${complexSupport})` }}
-          ></div>
-        </section>
-        <section className="imgWithTxt rightTxt">
-          <div className="imgWithTxtHeading">
-            <h2>Комплексная поддержка организма</h2>
-            <p>
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты. Рот, использовало. Рекламных семь маленькая
-              он сих агентство своего. Необходимыми диких алфавит встретил
-              строчка имеет они запятых дорогу, до то большой, сбить даль, не
-              текстами ее взобравшись сих решила наш правилами страна точках
-              подзаголовок скатился вопроса. Это послушавшись своих щеке
-              пустился предложения они коварный запятых подзаголовок вопроса,
-              единственное жизни грустный.
-            </p>
-          </div>
-          <div
-            className="imgWithTxtImg"
-            style={{ backgroundImage: `url(${complexSupport})` }}
-          ></div>
-        </section>
+        {productObj?.extra?.info1[0] && (
+          <section className="imgWithTxt rightTxt">
+            <div className="imgWithTxtHeading">
+              <h2>{productObj?.extra?.info1[0]}</h2>
+              <p>{productObj?.extra?.info1[1]}</p>
+            </div>
+            <div
+              className="imgWithTxtImg"
+              style={{ backgroundImage: `url(${productDesc1})` }}
+            ></div>
+          </section>
+        )}
+        {productObj?.extra?.info2[0] && (
+          <section className="imgWithTxt leftTxt">
+            <div className="imgWithTxtHeading">
+              <h2>{productObj?.extra?.info2[0]}</h2>
+              <p>{productObj?.extra?.info2[1]}</p>
+            </div>
+            <div
+              className="imgWithTxtImg"
+              style={{ backgroundImage: `url(${productDesc2})` }}
+            ></div>
+          </section>
+        )}
+        {productObj?.extra?.info3[0] && (
+          <section className="imgWithTxt rightTxt">
+            <div className="imgWithTxtHeading">
+              <h2>{productObj?.extra?.info3[0]}</h2>
+              <p>{productObj?.extra?.info3[1]}</p>
+            </div>
+            <div
+              className="imgWithTxtImg"
+              style={{ backgroundImage: `url(${productDesc3})` }}
+            ></div>
+          </section>
+        )}
       </main>
       <Footer />
       <Outlet />

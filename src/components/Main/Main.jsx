@@ -25,9 +25,11 @@ import person from "../../images/person.png";
 //sections
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Questions from "../Questions/Questions";
 
 function Main() {
   const [isLoader, setIsLoader] = useState(true);
+  const [isQuestions, setIsQuestions] = useState(false);
 
   useEffect(() => {
     setIsLoader(false);
@@ -36,6 +38,7 @@ function Main() {
   return (
     <>
       <Header hiddenLoader={isLoader}></Header>
+      <Questions visible={isQuestions} setIsQuestions={setIsQuestions} />
       <main>
         <section className="mainBanner">
           <div className="container">
@@ -43,9 +46,9 @@ function Main() {
               <h1>СОЗДАВАЙТЕ СВОЮ ЭЙФОРИЮ С НАМИ КАЖДЫЙ ДЕНЬ.</h1>
               <p>Тут будет текст которй добавится позже</p>
               <div className="mainBannerPartners">
-                <Link className="partner"></Link>
-                <Link className="partner bigPartner"></Link>
-                <Link className="partner"></Link>
+                <Link reloadDocument className="partner"></Link>
+                <Link reloadDocument className="partner bigPartner"></Link>
+                <Link reloadDocument className="partner"></Link>
               </div>
             </div>
             <div className="mainBannerCards">
@@ -156,7 +159,7 @@ function Main() {
               пустился предложения они коварный запятых подзаголовок вопроса,
               единственное жизни грустный.
             </p>
-            <Link to={APP_ROUTES.CATALOG} className="br10">
+            <Link reloadDocument to={APP_ROUTES.CATALOG} className="br10">
               Каталог
             </Link>
           </div>
@@ -182,7 +185,7 @@ function Main() {
               он сих агентство своего. Необходимыми диких алфавит встретил
               строчка имеет они запятых дорогу, до то большой, сбить даль.
             </p>
-            <Link to={APP_ROUTES.PRODUCTS} className="br10">
+            <Link reloadDocument to={APP_ROUTES.PRODUCTS} className="br10">
               Подробнее
               <img src={sliderArrow} alt={sliderArrow} />
             </Link>
@@ -317,7 +320,7 @@ function Main() {
                 Реферальная платформа создана для того что бы каждый мог
                 зарабатывать на том на чем он будет зарабатывать
               </h3>
-              <Link to={APP_ROUTES.REFERRAL} className="br10">
+              <Link reloadDocument to={APP_ROUTES.REFERRAL} className="br10">
                 Подробнее
               </Link>
             </div>
@@ -358,7 +361,7 @@ function Main() {
                 </div>
               </div>
             </div>
-            <Link to={APP_ROUTES.PRODUCTS} className="br10">
+            <Link onClick={() => setIsQuestions(true)} className="br10">
               Пройти опрос
             </Link>
           </div>
@@ -385,6 +388,7 @@ function Main() {
                   placeholder="Номер телефона (+998)"
                   pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
                   required
+                  maxLength={13}
                 />
                 <button type="submit">Оставить заявку</button>
               </form>

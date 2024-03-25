@@ -39,7 +39,7 @@ function Contacts() {
               </p>
             </div>
             <div
-              className="imgWithTxtImg"
+              className="imgWithTxtImg withoutAnimation"
               style={{ backgroundImage: `url(${complexSupport})` }}
             ></div>
           </div>

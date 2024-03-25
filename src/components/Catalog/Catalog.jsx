@@ -91,12 +91,18 @@ function Catalog() {
         </div>
         <div className="container catalogContainer">
           <div className="desktopCategories">
-            {superCategories.map((superCategory) => (
+            <div className="mainCategoryLink">
+              <Link reloadDocument to={APP_ROUTES.CATALOG}>Все Категории</Link>
+            </div>
+            <div className="mainCategoryLink promo">
+              <Link reloadDocument to={APP_ROUTES.CATALOG}>Новинки</Link>
+            </div>
+            {superCategories.map((superCategory, index) => (
               <div
                 className={
-                  superCategory.id === 1
-                    ? "categoryWrapper"
-                    : "categoryWrapper closeCategory"
+                  index === 1
+                    ? "categoryWrapper closeCategory"
+                    : "categoryWrapper"
                 }
                 key={superCategory.id}
               >
@@ -112,7 +118,7 @@ function Catalog() {
                         reloadDocument
                         key={category.id}
                       >
-                        {category.title} <div>22</div>
+                        {category.title} <div>{category.products.length}</div>
                       </Link>
                     ))}
                   </div>

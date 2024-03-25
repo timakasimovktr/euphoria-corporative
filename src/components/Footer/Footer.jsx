@@ -35,7 +35,7 @@ const Footer = () => {
               <div className="footer-col">
                 <a href="">Контакты</a>
                 <a href="">+998 (55) 517-01-12</a>
-                <div>
+                <div className="social_media">
                   <a href="">
                     <img src={instaIcon} alt="" />
                   </a>

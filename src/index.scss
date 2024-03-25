@@ -4,7 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 @keyframes hideLoader{
@@ -17,8 +17,21 @@
   }
 }
 
+[data-hiddenelem="true"]{
+  display: none !important;
+}
+
+.Toastify{
+  z-index: 999999 !important;
+  position: relative !important;
+}
+
 .hiddenLoader{
   animation: hideLoader 0.5s linear 1 forwards;
+}
+
+html{
+  background: black !important;
 }
 
 body {
@@ -29,6 +42,8 @@ body {
   color: #ffffff;
   padding-top: 65px;
   overflow-x: hidden !important;
+  max-width: 2400px !important;
+  margin: 0 auto;
 }
 
 main{

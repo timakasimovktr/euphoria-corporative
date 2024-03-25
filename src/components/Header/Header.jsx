@@ -33,20 +33,17 @@ const Header = (props) => {
                 </label>
                 <ul className="menu__box">
                   <li>
-                    <Link to={APP_ROUTES.CATALOG}>Продукция</Link>
+                    <Link reloadDocument to={APP_ROUTES.WELCOME}>Главная</Link>
                   </li>
                   <li>
-                    <Link to={APP_ROUTES.CONTACTS}>Филиалы</Link>
+                    <Link reloadDocument to={APP_ROUTES.CATALOG}>Продукция</Link>
                   </li>
                   <li>
-                    <Link to={APP_ROUTES.FILIAL}>Партнеры</Link>
+                    <Link reloadDocument to={APP_ROUTES.FILIAL}>Партнеры</Link>
                   </li>
                   <li>
-                    <Link to={APP_ROUTES.CONTACTS}>Контакты</Link>
+                    <Link reloadDocument to={APP_ROUTES.CONTACTS}>Контакты</Link>
                   </li>
-                  {/* <li>
-                  <Link to={APP_ROUTES.ABOUT}>О нас</Link>
-                </li> */}
                 </ul>
               </div>
             </nav>
