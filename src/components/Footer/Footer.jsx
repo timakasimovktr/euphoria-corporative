@@ -1,11 +1,27 @@
 import React from "react";
+import { APP_ROUTES } from "../../router/Route";
+import { Outlet, Link } from "react-router-dom";
+
 import footerLogo from "../../images/Footer-Logo.png";
 import instaIcon from "../../images/Instagram-Icon.svg";
 import tgIcon from "../../images/Telegram-Icon.svg";
 import fbIcon from "../../images/Facebook-Icon.svg";
 import euphoriaLogo from "../../images/Euphoria-Logo.svg";
-import './Footer.scss';
+
+import "./Footer.scss";
+
 const Footer = () => {
+
+  const scrollTo = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const sectionId = document.getElementById(hash.slice(1));
+      if (sectionId) {
+        sectionId.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
+
   return (
     <>
       <footer>
@@ -17,34 +33,34 @@ const Footer = () => {
 
             <div className="footer-links-row" style={{ width: "70%" }}>
               <div className="footer-col">
-                <a href="">
+                <Link to={`${APP_ROUTES.WELCOME}#contactUsSection`} onClick={() => scrollTo()}>
                   <b>Оставить заявку</b>
-                </a>
-                <a href="">Отзывы</a>
+                </Link>
+                <Link to={`${APP_ROUTES.WELCOME}#commentsSection`} onClick={() => scrollTo()}>Отзывы</Link>
               </div>
               <div className="footer-col">
-                <a href="">Продукция</a>
-                <a href="">Новинки </a>
-                <a href="">О нас</a>
+                <Link reloadDocument to={`${APP_ROUTES.CATALOG}`} onClick={() => scrollTo()}>Продукция</Link>
+                <Link reloadDocument to={`${APP_ROUTES.CATALOG}`} onClick={() => scrollTo()}>Новинки </Link>
+                <Link to={`${APP_ROUTES.WELCOME}#aboutUs`} onClick={() => scrollTo()}>О нас</Link>
               </div>
               <div className="footer-col">
-                <a href="">Партнеры</a>
-                <a href="">Клиентам</a>
-                <a href="">FAQ</a>
+                <Link to={`${APP_ROUTES.WELCOME}#commentsSection`} onClick={() => scrollTo()}>Партнеры</Link>
+                <Link to={`${APP_ROUTES.WELCOME}#marketingSection`} onClick={() => scrollTo()}>Клиентам</Link>
+                <Link reloadDocument to={`${APP_ROUTES.CONTACTS}`} onClick={() => scrollTo()}>FAQ</Link>
               </div>
               <div className="footer-col">
-                <a href="">Контакты</a>
-                <a href="">+998 (55) 517-01-12</a>
+                <Link reloadDocument to={`${APP_ROUTES.CONTACTS}`} onClick={() => scrollTo()}>Контакты</Link>
+                <Link reloadDocument to={`${APP_ROUTES.CONTACTS}`} onClick={() => scrollTo()}>+998 (55) 517-01-12</Link>
                 <div className="social_media">
-                  <a href="">
+                  <Link to={`${APP_ROUTES.WELCOME}#commentsSection`}>
                     <img src={instaIcon} alt="" />
-                  </a>
-                  <a href="">
+                  </Link>
+                  <Link to={`${APP_ROUTES.WELCOME}#commentsSection`}>
                     <img src={fbIcon} alt="" />
-                  </a>
-                  <a href="">
+                  </Link>
+                  <Link to={`${APP_ROUTES.WELCOME}#commentsSection`}>
                     <img src={tgIcon} alt="" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -59,6 +75,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <Outlet />
     </>
   );
 };

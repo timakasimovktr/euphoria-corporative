@@ -21,6 +21,9 @@ import quotationMark from "../../images/“.svg";
 import commentsRight from "../../images/commentsRight.png";
 import commentsLeft from "../../images/commnetsLeft.png";
 import person from "../../images/person.png";
+import logistics from "../../images/logistics.jpg";
+import callcenter from "../../images/callcenter.jpg";
+import marketing from "../../images/marketing.png";
 
 //sections
 import Header from "../Header/Header";
@@ -35,6 +38,16 @@ function Main() {
     setIsLoader(false);
   }, []);
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const sectionId = document.getElementById(hash.slice(1));
+      if (sectionId) {
+        sectionId.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
   return (
     <>
       <Header hiddenLoader={isLoader}></Header>
@@ -46,9 +59,15 @@ function Main() {
               <h1>СОЗДАВАЙТЕ СВОЮ ЭЙФОРИЮ С НАМИ КАЖДЫЙ ДЕНЬ.</h1>
               <p>Тут будет текст которй добавится позже</p>
               <div className="mainBannerPartners">
-                <Link reloadDocument className="partner"></Link>
-                <Link reloadDocument className="partner bigPartner"></Link>
-                <Link reloadDocument className="partner"></Link>
+                <Link reloadDocument to={APP_ROUTES.LOGISTICS} className="partner">
+                  <img src={logistics} alt={logistics} />
+                </Link>
+                <Link reloadDocument to={APP_ROUTES.CALLCENTER} className="partner bigPartner">
+                  <img src={callcenter} alt={callcenter} />
+                </Link>
+                <Link reloadDocument to={APP_ROUTES.MARKETING} className="partner">
+                  <img src={marketing} alt={marketing} />
+                </Link>
               </div>
             </div>
             <div className="mainBannerCards">
@@ -169,7 +188,7 @@ function Main() {
           ></div>
         </section>
 
-        <section className="marketing">
+        <section className="marketing" id="marketingSection">
           <div className="marketingHeading">
             <h2>Маркетинговая линейка</h2>
             <p>
@@ -195,7 +214,7 @@ function Main() {
           </div>
         </section>
 
-        <section className="comments">
+        <section className="comments" id="commentsSection">
           <div className="commentsLeft commentsSlides">
             <div
               className="commentsBgWrapper"
@@ -367,7 +386,7 @@ function Main() {
           </div>
         </section>
 
-        <section className="contactUs">
+        <section className="contactUs" id="contactUsSection">
           <div className="container">
             <div className="contactUsTxt">
               <h2>Далеко-далеко за словесными горами.</h2>

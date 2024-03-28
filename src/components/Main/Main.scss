@@ -48,15 +48,28 @@ main {
 
       .partner {
         width: 28%;
-        padding-top: 28%;
-        background: #3e3e3e;
+        // padding-top: 28%;
+        // background: #3e3e3e;
         border-radius: 10px;
+
+        img {
+          min-height: 245px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+          // display: none;
+        }
       }
 
       .bigPartner {
         width: 35%;
-        padding-top: 35%;
+        // padding-top: 35%;
         margin: 0 15px;
+
+        img {
+          min-height: 305px;
+        }
       }
     }
   }
@@ -346,7 +359,7 @@ main {
       background-size: 100% 100%;
     }
   }
-  
+
 
   .imgWithTxtImg {
     overflow: hidden;
@@ -357,7 +370,8 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 600px;
-    &:not(.withoutAnimation){
+
+    &:not(.withoutAnimation) {
       animation: complexAnimation 20s infinite linear;
     }
   }
@@ -1137,6 +1151,18 @@ main {
 
       * {
         text-align: center !important;
+      }
+    }
+
+    .partner {
+      img {
+        min-height: 145px !important; 
+      }
+    }
+
+    .bigPartner {
+      img {
+        min-height: 205px !important;
       }
     }
 

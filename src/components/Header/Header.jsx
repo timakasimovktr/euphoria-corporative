@@ -39,7 +39,7 @@ const Header = (props) => {
                     <Link reloadDocument to={APP_ROUTES.CATALOG}>Продукция</Link>
                   </li>
                   <li>
-                    <Link reloadDocument to={APP_ROUTES.FILIAL}>Партнеры</Link>
+                    <Link reloadDocument to={APP_ROUTES.LOGISTICS}>Логистика</Link>
                   </li>
                   <li>
                     <Link reloadDocument to={APP_ROUTES.CONTACTS}>Контакты</Link>
