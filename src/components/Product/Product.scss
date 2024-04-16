@@ -89,7 +89,7 @@ main {
 
     .orderWrapper {
         width: 50%;
-        height: 400px;
+        min-height: 440px;
         max-width: 500px;
         min-width: 380px;
         background: #DCDCDC;
@@ -158,6 +158,16 @@ main {
                 font-family: "Gilroy-Light", sans-serif;
                 margin-bottom: 20px;
                 color: black;
+            }
+
+            h2{
+                width: 100%;
+                text-align: right;
+                font-size: 18px;
+                font-family: "Gilroy-Medium", sans-serif;
+                margin-bottom: 20px;
+                color: black;   
+
             }
 
             input,

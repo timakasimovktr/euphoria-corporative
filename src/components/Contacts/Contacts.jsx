@@ -15,6 +15,7 @@ import complexSupport from "../../images/filial-Map.png";
 
 //images
 import rightArrow from "../../images/sliderArrow.png";
+import asiaMap from "../../images/asiamap.png";
 
 //sections
 import Header from "../Header/Header";
@@ -40,8 +41,18 @@ function Contacts() {
             </div>
             <div
               className="imgWithTxtImg withoutAnimation"
-              style={{ backgroundImage: `url(${complexSupport})` }}
-            ></div>
+              style={{ backgroundImage: `url(${asiaMap})` }}
+            >
+              <div className="dot1">
+                <div className="dotChild"><p>Узбекистан</p></div>
+              </div>
+              <div className="dot2">
+                <div className="dotChild"><p>Казахстан</p></div>
+              </div>
+              <div className="dot3">
+                <div className="dotChild"><p>Турция</p></div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="contactUsForm">

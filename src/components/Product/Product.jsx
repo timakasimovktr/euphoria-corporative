@@ -127,7 +127,7 @@ function Product() {
           <div className="orderWrapper" onClick={(e) => e.stopPropagation()}>
             <div className="closePopup" onClick={() => closePopup()}></div>
             <div className={`orderStep1 ${orederStep1 ? "" : "hidden"}`}>
-              <h3>Оформить заказ</h3>
+              <h3>Оформить заказ "{productObj.title}"</h3>
               <input
                 type="text"
                 onChange={(e) =>
@@ -174,6 +174,7 @@ function Product() {
                 <option value="Навои">Навои</option>
                 <option value="Кашкадарья">Кашкадарья</option>
               </select>
+              <h2>Общая стоимость: {(productObj?.price * qty).toLocaleString()} сум</h2>
               <button className="sendOrder" onClick={() => sendOrder()}>
                 Заказать
               </button>
